@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beasiswa Bojonegoro — Informasi Program 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2E2A;
+    --ink-soft:#26403A;
+    --paper:#F6F1E4;
+    --paper-dim:#EDE5D0;
+    --gold:#D3A54A;
+    --gold-deep:#B4822C;
+    --clay:#A65B2E;
+    --text-dark:#241C13;
+    --text-muted:#6E6656;
+    --line:rgba(36,28,19,0.14);
+    --line-light:rgba(246,241,228,0.22);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-dark);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  img,svg{display:block;max-width:100%;}
+
+  /* ---------- motif ---------- */
+  .leaf-motif{
+    position:absolute; inset:0; opacity:0.10; pointer-events:none;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(27,46,42,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-light);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    color:var(--paper);
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.02rem;letter-spacing:0.01em;}
+  .brand .mark{width:30px;height:30px;flex:none;}
+  .nav-links{display:flex;gap:26px;font-size:0.92rem;}
+  .nav-links a{text-decoration:none;color:var(--paper-dim);border-bottom:1px solid transparent;padding-bottom:3px;transition:border-color .15s, color .15s;}
+  .nav-links a:hover{color:var(--gold);border-color:var(--gold);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--paper);font-size:1.4rem;cursor:pointer;}
+
+  @media (max-width:760px){
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .25s ease;border-bottom:1px solid var(--line-light);}
+    .nav-links.open{max-height:320px;}
+    .nav-links a{padding:14px 28px;border-bottom:1px solid var(--line-light);width:100%;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(120% 140% at 15% -10%, #2E4C45 0%, var(--ink) 55%, #142320 100%);
+    color:var(--paper);
+    padding:96px 0 76px;
+    overflow:hidden;
+  }
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.86rem;color:var(--gold);
+    border:1px solid rgba(211,165,74,0.45);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:26px;
+  }
+  .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    font-weight:600;
+    max-width:15ch;
+    margin:0 0 22px;
+    line-height:1.06;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:500;}
+  .hero p.lede{
+    max-width:52ch;font-size:1.12rem;color:#DCE4DF;margin:0 0 38px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:8px;font-weight:600;font-size:0.95rem;
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-gold{background:var(--gold);color:#241C13;}
+  .btn-gold:hover{background:#E0B463;}
+  .btn-ghost{border-color:rgba(246,241,228,0.4);color:var(--paper);}
+  .btn-ghost:hover{background:rgba(246,241,228,0.08);}
+
+  .stat-row{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line-light);
+    padding-top:34px;
+  }
+  .stat{padding-right:20px;}
+  .stat .num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--gold);font-weight:600;}
+  .stat .label{font-size:0.85rem;color:#B9C4BE;margin-top:4px;}
+  @media (max-width:760px){
+    .stat-row{grid-template-columns:repeat(2,1fr);row-gap:26px;}
+  }
+
+  /* ---------- section basics ---------- */
+  section{padding:88px 0;}
+  .eyebrow-row{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;}
+  .section-index{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-deep);font-size:1rem;}
+  h2.section-title{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;margin:0 0 18px;max-width:20ch;}
+  p.section-intro{color:var(--text-muted);max-width:62ch;font-size:1.04rem;margin:0 0 44px;}
+
+  .divider{height:1px;background:var(--line);border:none;margin:0;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start;}
+  .about-grid p{margin:0 0 18px;color:#3A3024;}
+  .about-side{
+    background:var(--ink);color:var(--paper);
+    padding:34px 30px;border-radius:4px;position:relative;
+  }
+  .about-side h3{font-size:1.15rem;font-weight:600;margin:0 0 16px;color:var(--gold);}
+  .about-side ul{margin:0;padding:0;list-style:none;}
+  .about-side li{
+    padding:12px 0;border-top:1px solid var(--line-light);
+    display:flex;justify-content:space-between;gap:12px;font-size:0.94rem;
+  }
+  .about-side li:first-child{border-top:none;}
+  .about-side li b{color:var(--paper);font-weight:600;}
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ---------- schemes tabs ---------- */
+  .scheme-shell{
+    border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#FCFAF3;
+  }
+  .scheme-tabs{
+    display:flex;flex-wrap:wrap;background:var(--paper-dim);border-bottom:1px solid var(--line);
+  }
+  .scheme-tab{
+    flex:1 1 auto;min-width:150px;
+    padding:16px 18px;font-size:0.9rem;font-weight:600;text-align:left;
+    background:none;border:none;cursor:pointer;color:var(--text-muted);
+    border-right:1px solid var(--line);position:relative;
+    transition:background .15s ease,color .15s ease;
+  }
+  .scheme-tab:last-child{border-right:none;}
+  .scheme-tab .status-dot{
+    display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;
+    background:#8C7E6A;
+  }
+  .scheme-tab.open .status-dot{background:#4E7A5C;}
+  .scheme-tab.pending .status-dot{background:var(--clay);}
+  .scheme-tab.active{background:#FCFAF3;color:var(--text-dark);}
+  .scheme-tab.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold-deep);
+  }
+  @media (max-width:700px){
+    .scheme-tab{min-width:50%;border-bottom:1px solid var(--line);}
+  }
+
+  .scheme-panel{display:none;padding:38px;}
+  .scheme-panel.active{display:block;}
+  .scheme-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:6px;}
+  .scheme-head h3{margin:0;font-size:1.5rem;font-weight:600;}
+  .badge{
+    font-size:0.76rem;font-weight:700;padding:4px 11px;border-radius:999px;
+    letter-spacing:0.02em;
+  }
+  .badge.open{background:#E4EEE4;color:#356245;}
+  .badge.pending{background:#F3E2D1;color:#8A4B22;}
+  .scheme-desc{color:var(--text-muted);margin:10px 0 26px;max-width:64ch;}
+  .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  .req-col h4{font-size:0.85rem;text-transform:none;color:var(--gold-deep);margin:0 0 12px;font-weight:700;}
+  .req-col ul{margin:0;padding:0;list-style:none;}
+  .req-col li{
+    padding:9px 0 9px 22px;position:relative;font-size:0.94rem;border-top:1px solid var(--line);
+  }
+  .req-col li:first-child{border-top:none;}
+  .req-col li::before{
+    content:"";position:absolute;left:0;top:16px;width:8px;height:1px;background:var(--gold-deep);
+  }
+  @media (max-width:700px){.req-grid{grid-template-columns:1fr;} .scheme-panel{padding:26px 22px;}}
+
+  /* ---------- timeline ---------- */
+  .timeline{position:relative;padding-left:34px;}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .t-item{position:relative;padding-bottom:38px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";position:absolute;left:-34px;top:4px;width:13px;height:13px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--gold-deep);
+  }
+  .t-item.closed::before{border-color:var(--text-muted);background:var(--paper-dim);}
+  .t-item .t-date{font-size:0.82rem;color:var(--gold-deep);font-weight:700;margin-bottom:4px;}
+  .t-item.closed .t-date{color:var(--text-muted);}
+  .t-item h4{margin:0 0 6px;font-size:1.12rem;font-weight:600;}
+  .t-item p{margin:0;color:var(--text-muted);font-size:0.95rem;max-width:56ch;}
+  .t-status{display:inline-block;margin-top:8px;font-size:0.78rem;font-weight:700;padding:3px 10px;border-radius:999px;}
+  .t-status.closed{background:#E7E1D0;color:#6E6656;}
+  .t-status.upcoming{background:#E4EEE4;color:#356245;}
+
+  /* ---------- alur steps ---------- */
+  .steps{counter-reset:step;display:grid;gap:0;border-top:1px solid var(--line);}
+  .step{
+    display:grid;grid-template-columns:64px 1fr;gap:22px;
+    padding:26px 0;border-bottom:1px solid var(--line);
+  }
+  .step .num{
+    counter-increment:step;font-family:'Fraunces',serif;font-size:1.6rem;color:var(--gold-deep);
+    font-weight:600;
+  }
+  .step .num::before{content: counter(step, decimal-leading-zero);}
+  .step h4{margin:0 0 6px;font-size:1.06rem;font-weight:600;}
+  .step p{margin:0;color:var(--text-muted);font-size:0.95rem;max-width:58ch;}
+
+  /* ---------- disbursement / chart ---------- */
+  .disburse-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .disburse-note{color:#3A3024;}
+  .disburse-note .big{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold-deep);font-weight:600;margin:6px 0 4px;}
+  .bars{display:flex;flex-direction:column;gap:18px;}
+  .bar-row{display:grid;grid-template-columns:150px 1fr 64px;align-items:center;gap:14px;font-size:0.88rem;}
+  .bar-track{height:10px;background:var(--paper-dim);border-radius:999px;overflow:hidden;}
+  .bar-fill{height:100%;background:linear-gradient(90deg, var(--gold-deep), var(--gold));width:0%;border-radius:999px;transition:width 1.1s cubic-bezier(.2,.8,.2,1);}
+  .bar-count{text-align:right;font-weight:700;color:var(--text-dark);}
+  @media (max-width:800px){.disburse-grid{grid-template-columns:1fr;gap:36px;}}
+
+  /* ---------- faq ---------- */
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:'Fraunces',serif;font-size:1.08rem;color:var(--text-dark);font-weight:500;
+  }
+  .faq-q .plus{
+    flex:none;width:22px;height:22px;position:relative;
+  }
+  .faq-q .plus::before,.faq-q .plus::after{
+    content:"";position:absolute;background:var(--gold-deep);transition:transform .2s ease;
+  }
+  .faq-q .plus::before{left:0;top:50%;width:100%;height:2px;transform:translateY(-50%);}
+  .faq-q .plus::after{top:0;left:50%;width:2px;height:100%;transform:translateX(-50%);}
+  .faq-item.open .plus::after{transform:translateX(-50%) rotate(90deg);opacity:0;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{margin:0 0 24px;color:var(--text-muted);max-width:66ch;padding-right:40px;}
+
+  /* ---------- CTA / footer ---------- */
+  .cta{
+    background:var(--ink);color:var(--paper);padding:78px 0;position:relative;overflow:hidden;
+  }
+  .cta-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:30px;}
+  .cta h2{font-size:2rem;font-weight:600;margin:0 0 10px;max-width:16ch;}
+  .cta p{color:#C6D0CA;margin:0;max-width:44ch;}
+
+  footer{background:#152420;color:#9AA8A1;padding:52px 0 32px;font-size:0.88rem;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .foot-grid h5{color:var(--paper);font-size:0.85rem;margin:0 0 14px;font-weight:700;}
+  .foot-grid a{display:block;color:#9AA8A1;text-decoration:none;margin-bottom:9px;}
+  .foot-grid a:hover{color:var(--gold);}
+  .foot-bottom{border-top:1px solid rgba(246,241,228,0.12);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;}
+  @media (max-width:700px){.foot-grid{grid-template-columns:1fr;}}
+
+  .disclaimer{
+    background:var(--paper-dim);border-left:3px solid var(--clay);
+    padding:16px 20px;font-size:0.86rem;color:#5A4E3B;margin-top:44px;max-width:70ch;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="#D3A54A" stroke-width="1.4"/>
+        <path d="M16 6 C20 11 22 14 16 26 C10 14 12 11 16 6Z" fill="#D3A54A"/>
+      </svg>
+      Beasiswa Bojonegoro
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#jenis">Jenis Beasiswa</a>
+      <a href="#jadwal">Jadwal &amp; Alur</a>
+      <a href="#penyaluran">Penyaluran Dana</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag"><span class="dot"></span> Dinas Pendidikan Kabupaten Bojonegoro · Tahun Anggaran 2026</span>
+    <h1>Bantu langkah pendidikan <em>putra-putri Bojonegoro</em> lebih ringan.</h1>
+    <p class="lede">Beasiswa Pemkab Bojonegoro adalah program bantuan pendidikan bagi warga ber-KTP Bojonegoro, mencakup lima skema untuk pelajar, santri, dan mahasiswa dari berbagai latar kebutuhan.</p>
+    <div class="hero-actions">
+      <a href="#jenis" class="btn btn-gold">Lihat jenis beasiswa</a>
+      <a href="#jadwal" class="btn btn-ghost">Cek jadwal pendaftaran</a>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">Rp40,4 M</div><div class="label">Anggaran program tahun 2026</div></div>
+      <div class="stat"><div class="num">5</div><div class="label">Skema beasiswa yang tersedia</div></div>
+      <div class="stat"><div class="num">2.670</div><div class="label">Penerima tahap 1B (Jul 2026)</div></div>
+      <div class="stat"><div class="num">2×</div><div class="label">Gelombang pendaftaran per tahun</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">01</span></div>
+    <h2 class="section-title">Tentang program</h2>
+    <div class="about-grid">
+      <div>
+        <p>Beasiswa Bojonegoro merupakan komitmen Pemerintah Kabupaten Bojonegoro untuk memperluas akses pendidikan dan meningkatkan kualitas sumber daya manusia daerah. Program ini terbuka bagi pelajar dan mahasiswa dengan Nomor Induk Kependudukan (NIK) Bojonegoro yang memenuhi syarat di masing-masing skema.</p>
+        <p>Secara teknis, beasiswa ini berfungsi sebagai penggantian biaya Uang Kuliah Tunggal (UKT) yang sudah dibayarkan mahasiswa — bukan pembayaran UKT untuk semester berikutnya. Dana disalurkan melalui transfer langsung ke rekening masing-masing penerima setelah proses verifikasi dan penetapan selesai.</p>
+        <p>Kepala Dinas Pendidikan Kabupaten Bojonegoro, Anwar Mukhtadlo, menyampaikan bahwa program ini adalah investasi jangka panjang untuk menyiapkan generasi Bojonegoro yang unggul dan berdaya saing, sekaligus mendorong pemerataan akses pendidikan tinggi di seluruh desa.</p>
+      </div>
+      <aside class="about-side">
+        <h3>Sekilas program</h3>
+        <ul>
+          <li><span>Pengelola</span><b>Dinas Pendidikan Kab. Bojonegoro</b></li>
+          <li><span>Sasaran</span><b>Warga ber-NIK Bojonegoro</b></li>
+          <li><span>Jenjang</span><b>SMA/SMK/MA &amp; S1/D4</b></li>
+          <li><span>Bentuk bantuan</span><b>Penggantian biaya UKT</b></li>
+          <li><span>Mekanisme cair</span><b>Transfer ke rekening penerima</b></li>
+          <li><span>Syarat akreditasi</span><b>Prodi minimal B</b></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="jenis">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">02</span></div>
+    <h2 class="section-title">Lima jenis beasiswa</h2>
+    <p class="section-intro">Setiap skema punya sasaran dan syarat berbeda. Pilih salah satu tab untuk melihat detail lengkap, kuota, dan status keberlangsungannya.</p>
+
+    <div class="scheme-shell">
+      <div class="scheme-tabs" id="schemeTabs">
+        <button class="scheme-tab active open" data-panel="miskin"><span class="status-dot"></span>Keluarga Miskin</button>
+        <button class="scheme-tab open" data-panel="ponpes"><span class="status-dot"></span>Pondok Pesantren</button>
+        <button class="scheme-tab open" data-panel="tugasakhir"><span class="status-dot"></span>Tugas Akhir</button>
+        <button class="scheme-tab pending" data-panel="scientist"><span class="status-dot"></span>Scientist</button>
+        <button class="scheme-tab pending" data-panel="desa"><span class="status-dot"></span>Sepuluh Sarjana/Desa</button>
+      </div>
+
+      <div class="scheme-panel active" id="panel-miskin">
+        <div class="scheme-head"><h3>Beasiswa Keluarga Miskin</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <p class="scheme-desc">Ditujukan bagi lulusan SMA/SMK/MA sederajat asal Bojonegoro dari keluarga dengan keterbatasan ekonomi yang baru diterima di perguruan tinggi.</p>
+        <div class="req-grid">
+          <div class="req-col">
+            <h4>Syarat utama</h4>
+            <ul>
+              <li>Mahasiswa S1/D4 PTN/PTS di Bojonegoro, prodi terakreditasi minimal B</li>
+              <li>Berusia maksimal 20 tahun saat diterima sebagai mahasiswa</li>
+              <li>Berasal dari keluarga miskin terdaftar DTKS/DTESN desil 1–5</li>
+              <li>Memiliki IPS paling rendah 2,75 per semester</li>
+            </ul>
+          </div>
+          <div class="req-col">
+            <h4>Dokumen &amp; ketentuan</h4>
+            <ul>
+              <li>Lulusan SMA/SMK/MA sederajat di Kabupaten Bojonegoro</li>
+              <li>Bukti nilai ujian sekolah tertinggi di desanya</li>
+              <li>Bukti diterima di PTN/PTS wilayah Bojonegoro</li>
+              <li>Tidak sedang menerima beasiswa dari sumber lain</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:22px;font-size:0.9rem;color:var(--text-muted);">Kuota maksimal <b style="color:var(--text-dark);">10 mahasiswa per desa per tahun</b>.</p>
+      </div>
+
+      <div class="scheme-panel" id="panel-ponpes">
+        <div class="scheme-head"><h3>Beasiswa Pondok Pesantren</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <p class="scheme-desc">Untuk mahasiswa yang aktif mengajar atau mengasuh di pondok pesantren wilayah Bojonegoro, sebagai apresiasi atas kontribusi keagamaan sekaligus dukungan studi lanjut.</p>
+        <div class="req-grid">
+          <div class="req-col">
+            <h4>Syarat utama</h4>
+            <ul>
+              <li>Mahasiswa S1/D4 PTN/PTS di Bojonegoro, prodi terakreditasi minimal B</li>
+              <li>Berusia maksimal 40 tahun saat diterima sebagai mahasiswa</li>
+              <li>IPS paling rendah 3,00 per semester, dan/atau juara 1–3 kejuaraan akademik tingkat provinsi</li>
+            </ul>
+          </div>
+          <div class="req-col">
+            <h4>Dokumen &amp; ketentuan</h4>
+            <ul>
+              <li>Terdaftar sebagai pengajar/pengasuh ponpes di Bojonegoro</li>
+              <li>Surat keterangan dari yayasan ponpes berizin operasional, santri minimal 8 orang</li>
+              <li>Tidak sedang menerima beasiswa dari sumber lain</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:22px;font-size:0.9rem;color:var(--text-muted);">Kuota maksimal <b style="color:var(--text-dark);">2 mahasiswa per pondok pesantren per tahun</b>.</p>
+      </div>
+
+      <div class="scheme-panel" id="panel-tugasakhir">
+        <div class="scheme-head"><h3>Beasiswa Tugas Akhir</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <p class="scheme-desc">Bantuan satu kali bagi mahasiswa dari keluarga tidak mampu yang sedang menyelesaikan tugas akhir studi, agar proses kelulusan tidak terhambat kendala biaya.</p>
+        <div class="req-grid">
+          <div class="req-col">
+            <h4>Syarat utama</h4>
+            <ul>
+              <li>Mahasiswa S1/D4 PTN atau PTS</li>
+              <li>IPK minimal 2,75</li>
+              <li>Sedang menyusun tugas akhir</li>
+            </ul>
+          </div>
+          <div class="req-col">
+            <h4>Dokumen &amp; ketentuan</h4>
+            <ul>
+              <li>Berasal dari keluarga miskin terdaftar DTESN desil 1–5</li>
+              <li>Bantuan diberikan sebagai bantuan biaya satu kali</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="scheme-panel" id="panel-scientist">
+        <div class="scheme-head"><h3>Beasiswa Scientist</h3><span class="badge pending">Menunggu regulasi baru</span></div>
+        <p class="scheme-desc">Skema lanjutan bagi mahasiswa berprestasi di bidang akademik/riset. Pelaksanaan tahun 2026 masih menunggu penerbitan Peraturan Bupati (Perbup) terbaru sebagai dasar teknis, meski penyaluran tahap lanjutan sempat dicairkan pada Juli 2026 untuk penerima sebelumnya.</p>
+        <div class="req-grid">
+          <div class="req-col">
+            <h4>Status saat ini</h4>
+            <ul>
+              <li>Regulasi teknis (Perbup) masih dalam proses penyusunan</li>
+              <li>Pembukaan pendaftaran baru akan diumumkan setelah regulasi terbit</li>
+            </ul>
+          </div>
+          <div class="req-col">
+            <h4>Catatan</h4>
+            <ul>
+              <li>Pantau kanal resmi Dinas Pendidikan untuk info pembukaan terbaru</li>
+              <li>334 mahasiswa penerima lanjutan telah menerima pencairan tahap 1B</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="scheme-panel" id="panel-desa">
+        <div class="scheme-head"><h3>Beasiswa Sepuluh Sarjana per Desa</h3><span class="badge pending">Menunggu regulasi baru</span></div>
+        <p class="scheme-desc">Program unggulan yang menargetkan setiap desa di Bojonegoro memiliki sepuluh sarjana. Untuk periode lanjutan, pelaksanaannya masih menunggu Peraturan Bupati terbaru sebagai dasar teknis pelaksanaan.</p>
+        <div class="req-grid">
+          <div class="req-col">
+            <h4>Status saat ini</h4>
+            <ul>
+              <li>Regulasi teknis (Perbup) masih dalam proses penyusunan</li>
+              <li>Merupakan program lanjutan dari gelombang penerima sebelumnya</li>
+            </ul>
+          </div>
+          <div class="req-col">
+            <h4>Catatan</h4>
+            <ul>
+              <li>2.209 mahasiswa penerima lanjutan telah menerima pencairan tahap 1B</li>
+              <li>Pantau kanal resmi untuk jadwal pembukaan skema berikutnya</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="jadwal">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">03</span></div>
+    <h2 class="section-title">Jadwal &amp; alur pendaftaran</h2>
+    <p class="section-intro">Pendaftaran tahun 2026 dilaksanakan dalam dua gelombang. Berikut status masing-masing gelombang per 8 September 2026.</p>
+
+    <div class="timeline">
+      <div class="t-item closed">
+        <div class="t-date">9 Maret – 10 April 2026</div>
+        <h4>Gelombang I</h4>
+        <p>Periode pendaftaran pertama untuk skema Beasiswa Pondok Pesantren dan Beasiswa Keluarga Miskin.</p>
+        <span class="t-status closed">Sudah ditutup</span>
+      </div>
+      <div class="t-item closed">
+        <div class="t-date">1 – 31 Agustus 2026</div>
+        <h4>Gelombang II</h4>
+        <p>Periode pendaftaran kedua dengan skema yang sama, memberi kesempatan bagi pendaftar yang belum mengajukan di gelombang pertama.</p>
+        <span class="t-status closed">Sudah ditutup</span>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Menyusul</div>
+        <h4>Pembukaan skema Scientist &amp; Sepuluh Sarjana per Desa</h4>
+        <p>Menunggu penerbitan Peraturan Bupati terbaru. Jadwal akan diumumkan resmi oleh Dinas Pendidikan setelah regulasi selesai disusun.</p>
+        <span class="t-status upcoming">Dipantau</span>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;">
+      <h3 style="font-size:1.3rem;font-weight:600;margin-bottom:8px;">Alur umum pengajuan</h3>
+      <p class="section-intro" style="margin-bottom:8px;">Tahapan yang biasa dilalui pendaftar dari persiapan berkas hingga dana cair.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num"></div>
+          <div><h4>Periksa kelayakan &amp; siapkan dokumen</h4><p>Cocokkan data diri dengan syarat skema yang dituju: KTP/NIK Bojonegoro, akreditasi prodi, IPK/IPS, dan status DTKS bila diperlukan.</p></div>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <div><h4>Unduh template &amp; petunjuk teknis</h4><p>Formulir dan juknis resmi diambil dari kanal Dinas Pendidikan Kabupaten Bojonegoro atau perguruan tinggi tempat mahasiswa terdaftar.</p></div>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <div><h4>Ajukan berkas pada periode pendaftaran</h4><p>Berkas usulan dikumpulkan selama gelombang I atau II sesuai jadwal yang berlaku pada tahun berjalan.</p></div>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <div><h4>Verifikasi &amp; penetapan penerima</h4><p>Dinas Pendidikan melakukan verifikasi administrasi dan menetapkan daftar penerima sesuai regulasi yang berlaku.</p></div>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <div><h4>Pencairan dana</h4><p>Dana ditransfer langsung ke rekening masing-masing penerima sebagai penggantian biaya UKT yang telah dibayarkan.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="penyaluran">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">04</span></div>
+    <h2 class="section-title">Penyaluran dana tahap 1B</h2>
+    <p class="section-intro">Dicairkan pada Juli 2026 kepada 2.670 mahasiswa penerima lanjutan, dengan rincian sebagai berikut.</p>
+
+    <div class="disburse-grid">
+      <div class="disburse-note">
+        <div style="font-size:0.9rem;color:var(--text-muted);">Total dana tahap 1B disalurkan</div>
+        <div class="big">Rp10,5 M</div>
+        <p>Beasiswa Keluarga Miskin, Scientist lanjutan, dan Pondok Pesantren cair pada 3 Juli 2026. Beasiswa Sepuluh Sarjana per Desa cair menyusul pada 6 Juli 2026. Seluruh penyaluran dilakukan setelah tahap verifikasi, penetapan, dan pemeriksaan administrasi dinyatakan selesai.</p>
+      </div>
+      <div class="bars" id="bars">
+        <div class="bar-row">
+          <span>Sepuluh Sarjana/Desa</span>
+          <span class="bar-track"><span class="bar-fill" data-value="100"></span></span>
+          <span class="bar-count">2.209</span>
+        </div>
+        <div class="bar-row">
+          <span>Scientist</span>
+          <span class="bar-track"><span class="bar-fill" data-value="15"></span></span>
+          <span class="bar-count">334</span>
+        </div>
+        <div class="bar-row">
+          <span>Keluarga Miskin</span>
+          <span class="bar-track"><span class="bar-fill" data-value="5"></span></span>
+          <span class="bar-count">113</span>
+        </div>
+        <div class="bar-row">
+          <span>Pondok Pesantren</span>
+          <span class="bar-track"><span class="bar-fill" data-value="1"></span></span>
+          <span class="bar-count">14</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      Catatan: beasiswa Bojonegoro bersifat penggantian biaya UKT yang <em>sudah</em> dibayarkan mahasiswa, bukan pembayaran UKT untuk semester berikutnya. Informasi angka pada halaman ini mengacu pada rilis resmi bojonegorokab.go.id per Juli 2026 dan dapat berubah — selalu cek sumber resmi untuk kepastian.
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">05</span></div>
+    <h2 class="section-title">Pertanyaan yang sering diajukan</h2>
+
+    <div id="faqList">
+      <div class="faq-item open">
+        <button class="faq-q"><span>Siapa saja yang boleh mendaftar Beasiswa Bojonegoro?</span><span class="plus"></span></button>
+        <div class="faq-a" style="max-height:120px;"><p>Warga dengan Nomor Induk Kependudukan (NIK) Bojonegoro yang memenuhi syarat skema yang dituju — mulai dari lulusan SMA/SMK/MA sederajat hingga mahasiswa aktif S1/D4 di perguruan tinggi wilayah Bojonegoro dengan akreditasi prodi minimal B.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Apakah bisa menerima lebih dari satu jenis beasiswa sekaligus?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Tidak. Hampir seluruh skema mensyaratkan pendaftar tidak sedang menerima beasiswa dari sumber lain, termasuk skema lain dalam program ini.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Kapan pendaftaran gelombang berikutnya dibuka?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Kedua gelombang tahun 2026 (Maret–April dan Agustus) sudah ditutup per 8 September 2026. Jadwal gelombang tahun berikutnya biasanya diumumkan Dinas Pendidikan menjelang awal tahun ajaran — pantau kanal resmi untuk kepastian tanggal.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Bagaimana cara dana beasiswa diberikan?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Dana ditransfer langsung ke rekening penerima setelah proses verifikasi dan penetapan selesai, sebagai penggantian biaya UKT yang telah dibayarkan — bukan pembayaran di muka untuk semester berikutnya.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Kapan Beasiswa Scientist dan Sepuluh Sarjana per Desa dibuka lagi?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Kedua skema ini masih menunggu penerbitan Peraturan Bupati terbaru sebagai dasar teknis pelaksanaan. Pengumuman resmi akan disampaikan setelah regulasi tersebut terbit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Butuh info lebih lanjut?</h2>
+      <p>Hubungi langsung Dinas Pendidikan Kabupaten Bojonegoro atau kunjungi laman resmi untuk formulir, juknis, dan pengumuman terbaru.</p>
+    </div>
+    <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener" class="btn btn-gold">Kunjungi laman resmi</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>Beasiswa Bojonegoro</h5>
+        <p style="max-width:38ch;color:#8B988F;">Halaman informasi tidak resmi yang disusun sebagai proyek magang mahasiswa di Dinas Pendidikan Kabupaten Bojonegoro. Untuk pendaftaran dan kepastian data, selalu rujuk sumber resmi pemerintah daerah.</p>
+      </div>
+      <div>
+        <h5>Tautan resmi</h5>
+        <a href="https://bojonegorokab.go.id" target="_blank" rel="noopener">bojonegorokab.go.id</a>
+        <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener">dinaspendidikan.bojonegorokab.go.id</a>
+      </div>
+      <div>
+        <h5>Navigasi</h5>
+        <a href="#tentang">Tentang program</a>
+        <a href="#jenis">Jenis beasiswa</a>
+        <a href="#jadwal">Jadwal &amp; alur</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Data per September 2026 · Dinas Pendidikan Kabupaten Bojonegoro</span>
+      <span>Dibuat untuk keperluan proyek magang</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav toggle
+  document.getElementById('navToggle').addEventListener('click', ()=>{
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // scheme tabs
+  const tabs = document.querySelectorAll('.scheme-tab');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.scheme-panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
+    });
+  });
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // animate bars on scroll into view
+  const bars = document.querySelectorAll('.bar-fill');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        bars.forEach(b=> b.style.width = b.dataset.value + '%');
+        io.disconnect();
+      }
+    });
+  }, {threshold:0.3});
+  io.observe(document.getElementById('bars'));
+
+  // close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', ()=> document.getElementById('navLinks').classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
