@@ -153,31 +153,81 @@
   .about-side li b{color:var(--ink);font-weight:600;text-align:right;}
   @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
 
-  /* ---------- eligibility checker (NEW) ---------- */
+  /* ---------- eligibility checker (quiz wizard) ---------- */
   .checker{
-    background:var(--ink);color:var(--paper);border-radius:8px;padding:40px 36px;
+    background:var(--ink);color:var(--paper);border-radius:8px;padding:36px 36px 30px;
   }
-  .checker h3{color:var(--paper);font-size:1.3rem;margin:0 0 8px;}
-  .checker > p{color:#C9D2CB;margin:0 0 28px;max-width:56ch;font-size:0.95rem;}
+  .checker-head h3{color:var(--paper);font-size:1.28rem;margin:0 0 6px;}
+  .checker-head p{color:#C9D2CB;margin:0 0 26px;font-size:0.95rem;}
+
+  .quiz-progress{height:5px;background:rgba(252,250,245,0.14);border-radius:999px;overflow:hidden;margin-bottom:10px;}
+  .quiz-progress-bar{height:100%;width:16.6%;background:var(--gold);border-radius:999px;transition:width .35s ease;}
+  .quiz-step-label{font-size:0.78rem;color:var(--gold-soft);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:24px;}
+
+  .quiz-stage{position:relative;min-height:118px;}
+  .quiz-step{display:none;animation:stepIn .35s ease;}
+  .quiz-step.active{display:block;}
+  @keyframes stepIn{
+    from{opacity:0;transform:translateX(14px);}
+    to{opacity:1;transform:translateX(0);}
+  }
+
   .check-q{margin-bottom:22px;}
-  .check-q label.qlabel{display:block;font-size:0.85rem;color:var(--gold-soft);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.03em;}
+  label.qlabel{display:block;font-size:0.92rem;color:var(--paper);font-weight:600;margin-bottom:14px;}
   .check-opts{display:flex;flex-wrap:wrap;gap:10px;}
   .check-opts button{
     background:rgba(252,250,245,0.06);border:1px solid rgba(252,250,245,0.22);color:var(--paper);
-    padding:9px 16px;border-radius:999px;font-size:0.88rem;cursor:pointer;
-    transition:background .15s ease, border-color .15s ease;
+    padding:11px 18px;border-radius:999px;font-size:0.9rem;cursor:pointer;font-family:'Inter',sans-serif;
+    transition:background .15s ease, border-color .15s ease, transform .15s ease;
   }
-  .check-opts button:hover{border-color:var(--gold-soft);}
+  .check-opts button:hover{border-color:var(--gold-soft);transform:translateY(-1px);}
   .check-opts button.selected{background:var(--gold);border-color:var(--gold);color:#22201A;font-weight:600;}
-  .check-result{
-    margin-top:28px;padding-top:24px;border-top:1px solid rgba(252,250,245,0.16);
-    display:none;
+
+  .quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+  .quiz-nav-btn{
+    background:none;border:1px solid rgba(252,250,245,0.22);color:var(--paper);
+    padding:9px 16px;border-radius:6px;font-size:0.85rem;cursor:pointer;font-family:'Inter',sans-serif;
+    transition:border-color .15s ease, opacity .15s ease;
   }
-  .check-result.show{display:block;}
-  .check-result .result-tag{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gold-soft);font-weight:700;margin-bottom:8px;}
-  .check-result h4{margin:0 0 8px;font-size:1.25rem;color:var(--paper);}
-  .check-result p{margin:0;color:#C9D2CB;font-size:0.92rem;max-width:56ch;}
-  .check-reset{margin-top:16px;background:none;border:none;color:var(--gold-soft);font-size:0.85rem;cursor:pointer;text-decoration:underline;padding:0;}
+  .quiz-nav-btn:hover{border-color:var(--gold-soft);}
+  .quiz-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .quiz-nav-btn:disabled:hover{border-color:rgba(252,250,245,0.22);}
+
+  .check-result{
+    margin-top:8px;padding-top:0;border-top:none;display:none;position:relative;
+  }
+  .check-result.show{display:block;animation:stepIn .4s ease;}
+  .result-burst{
+    position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:1.3rem;
+    letter-spacing:6px;opacity:0;animation:burstPop 1s ease forwards;pointer-events:none;
+  }
+  @keyframes burstPop{
+    0%{opacity:0;transform:translate(-50%,6px) scale(0.8);}
+    35%{opacity:1;transform:translate(-50%,-8px) scale(1.05);}
+    100%{opacity:0;transform:translate(-50%,-22px) scale(1);}
+  }
+  .result-tag{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gold-soft);font-weight:700;margin-bottom:6px;}
+
+  .result-card{
+    background:rgba(252,250,245,0.05);border:1px solid rgba(252,250,245,0.14);border-radius:8px;
+    padding:18px 20px;margin-bottom:14px;
+  }
+  .result-card-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:4px;}
+  .result-card-title{display:flex;align-items:center;gap:10px;font-family:'Source Serif 4',serif;font-size:1.05rem;color:var(--paper);}
+  .result-score{
+    font-size:0.78rem;font-weight:700;padding:4px 12px;border-radius:999px;white-space:nowrap;
+  }
+  .result-score.high{background:var(--green-soft);color:var(--green);}
+  .result-score.mid{background:#F3E2D1;color:#8A4B22;}
+  .result-score.low{background:rgba(252,250,245,0.12);color:#C9D2CB;}
+  .result-checklist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;}
+  .result-checklist li{font-size:0.86rem;color:#C9D2CB;display:flex;gap:8px;align-items:flex-start;}
+  .result-checklist li .mark{flex:none;}
+  .result-note{
+    background:rgba(252,250,245,0.05);border:1px solid rgba(252,250,245,0.14);border-radius:8px;
+    padding:14px 18px;font-size:0.86rem;color:#C9D2CB;margin-top:6px;margin-bottom:20px;
+  }
+  .check-reset{background:none;border:none;color:var(--gold-soft);font-size:0.87rem;cursor:pointer;text-decoration:underline;padding:0;}
 
   /* ---------- schemes tabs ---------- */
   .scheme-shell{
@@ -478,35 +528,85 @@
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">02 — Alat Bantu</span></div>
     <h2 class="section-title">Cek skema yang mungkin cocok</h2>
-    <p class="section-intro">Jawab dua pertanyaan singkat berikut untuk melihat gambaran skema yang paling sesuai dengan kondisimu. Hasil ini hanya panduan awal, bukan penetapan resmi.</p>
+    <p class="section-intro">Jawab beberapa pertanyaan singkat berikut. Pertanyaan akan menyesuaikan otomatis dari jawabanmu, dan hasilnya berupa skor kecocokan untuk tiap skema — bukan penetapan resmi, hanya panduan awal.</p>
 
-    <div class="checker reveal">
-      <h3>Pencocokan skema beasiswa</h3>
-      <p>Pilih status yang paling menggambarkan dirimu saat ini.</p>
-
-      <div class="check-q">
-        <label class="qlabel">Status kamu sekarang</label>
-        <div class="check-opts" data-group="status">
-          <button data-value="lulusan">Lulusan SMA/SMK/MA, baru diterima kuliah</button>
-          <button data-value="mahasiswa">Mahasiswa aktif S1/D4</button>
-          <button data-value="pengajar">Mahasiswa aktif &amp; mengajar di ponpes</button>
-        </div>
+    <div class="checker reveal" id="checkerBox">
+      <div class="checker-head">
+        <h3>🎯 Pencocokan skema beasiswa</h3>
+        <p>Isi profil singkatmu, lihat skema mana yang paling nyambung.</p>
       </div>
 
-      <div class="check-q">
-        <label class="qlabel">Kondisi tambahan</label>
-        <div class="check-opts" data-group="kondisi">
-          <button data-value="dtks">Keluarga terdaftar DTKS/DTESN</button>
-          <button data-value="skripsi">Sedang menyusun tugas akhir</button>
-          <button data-value="tidak">Tidak ada kondisi khusus</button>
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
+      <div class="quiz-step-label" id="quizStepLabel">Langkah 1 dari 6</div>
+
+      <div class="quiz-stage" id="quizStage">
+
+        <div class="quiz-step" data-step="status">
+          <label class="qlabel">Status kamu sekarang</label>
+          <div class="check-opts" data-field="status">
+            <button data-value="lulusan">🎓 Lulusan SMA/SMK/MA, baru diterima kuliah</button>
+            <button data-value="mahasiswa">📘 Mahasiswa aktif S1/D4</button>
+            <button data-value="ponpes">🕌 Mahasiswa aktif &amp; mengajar/mengasuh di ponpes</button>
+          </div>
         </div>
+
+        <div class="quiz-step" data-step="dtks">
+          <label class="qlabel">Apakah keluargamu terdaftar DTKS/DTESN (desil 1–5)?</label>
+          <div class="check-opts" data-field="dtks">
+            <button data-value="ya">✅ Ya, terdaftar</button>
+            <button data-value="tidak">❌ Tidak</button>
+            <button data-value="tidak_tahu">🤔 Belum tahu / perlu dicek</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="usia">
+          <label class="qlabel">Usiamu saat pertama diterima sebagai mahasiswa</label>
+          <div class="check-opts" data-field="usia">
+            <button data-value="muda">🧒 20 tahun atau lebih muda</button>
+            <button data-value="sedang">🧑 21–40 tahun</button>
+            <button data-value="tua">🧓 Lebih dari 40 tahun</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="ipk">
+          <label class="qlabel">IPK/IPS kamu saat ini kira-kira berapa?</label>
+          <div class="check-opts" data-field="ipk">
+            <button data-value="rendah">📉 Di bawah 2,75</button>
+            <button data-value="menengah">📊 2,75 – 2,99</button>
+            <button data-value="tinggi">📈 3,00 ke atas</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="tugasakhir">
+          <label class="qlabel">Apakah kamu sedang menyusun tugas akhir/skripsi?</label>
+          <div class="check-opts" data-field="tugasakhir">
+            <button data-value="ya">✅ Ya, sedang menyusun</button>
+            <button data-value="tidak">❌ Belum / tidak</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="beasiswalain">
+          <label class="qlabel">Apakah sedang menerima beasiswa dari sumber lain?</label>
+          <div class="check-opts" data-field="beasiswalain">
+            <button data-value="ya">✅ Ya, sedang menerima</button>
+            <button data-value="tidak">❌ Tidak sedang menerima</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="quiz-nav" id="quizNav">
+        <button id="quizBack" class="quiz-nav-btn" disabled>← Kembali</button>
       </div>
 
       <div class="check-result" id="checkResult">
-        <div class="result-tag">Kemungkinan skema</div>
-        <h4 id="resultTitle">—</h4>
-        <p id="resultDesc">—</p>
-        <button class="check-reset" id="checkReset">Ulangi pertanyaan</button>
+        <div class="result-burst" id="resultBurst">🎉✨🎓✨🎉</div>
+        <div class="result-tag">Hasil pencocokan</div>
+        <h4 style="color:var(--paper);margin:0 0 4px;font-size:1.15rem;">Berikut skema yang paling relevan dengan profilmu</h4>
+        <p style="margin:0 0 22px;">Skor dihitung dari kriteria resmi tiap skema. Skor tinggi = banyak syarat yang cocok, bukan jaminan lolos seleksi.</p>
+        <div id="resultCards"></div>
+        <div class="result-note" id="resultNote"></div>
+        <button class="check-reset" id="checkReset">↻ Ulangi dari awal</button>
       </div>
     </div>
   </div>
@@ -954,56 +1054,169 @@
   }, {threshold:0.5});
   statNums.forEach(el=> statIO.observe(el));
 
-  // eligibility checker
-  const checkState = {status:null, kondisi:null};
-  document.querySelectorAll('.check-opts').forEach(group=>{
-    const key = group.dataset.group;
+  // ---------- eligibility checker (quiz wizard) ----------
+  const quizAnswers = {};
+  const allSteps = ['status','dtks','usia','ipk','tugasakhir','beasiswalain'];
+  // steps skipped depending on earlier answers (computed dynamically)
+  function activeSteps(){
+    return allSteps.filter(s=>{
+      if(s === 'tugasakhir' && quizAnswers.status === 'lulusan') return false; // belum mulai kuliah, jelas belum skripsi
+      return true;
+    });
+  }
+  let stepPointer = 0;
+
+  const stageEl = document.getElementById('quizStage');
+  const progressBar = document.getElementById('quizProgressBar');
+  const stepLabel = document.getElementById('quizStepLabel');
+  const backBtn = document.getElementById('quizBack');
+  const resultEl = document.getElementById('checkResult');
+  const checkerBox = document.getElementById('checkerBox');
+
+  function showStep(stepName){
+    document.querySelectorAll('.quiz-step').forEach(s=>{
+      s.classList.toggle('active', s.dataset.step === stepName);
+    });
+    const steps = activeSteps();
+    const idx = steps.indexOf(stepName);
+    progressBar.style.width = (((idx+1)/steps.length)*100) + '%';
+    stepLabel.textContent = 'Langkah ' + (idx+1) + ' dari ' + steps.length;
+    backBtn.disabled = idx === 0;
+  }
+
+  function goToStep(index){
+    const steps = activeSteps();
+    if(index < 0){ index = 0; }
+    if(index >= steps.length){
+      revealResult();
+      return;
+    }
+    stepPointer = index;
+    resultEl.classList.remove('show');
+    document.querySelector('.quiz-progress').style.display = '';
+    stepLabel.style.display = '';
+    document.getElementById('quizNav').style.display = '';
+    stageEl.style.display = '';
+    showStep(steps[stepPointer]);
+  }
+
+  document.querySelectorAll('.quiz-step .check-opts').forEach(group=>{
+    const field = group.dataset.field;
     group.querySelectorAll('button').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         group.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
         btn.classList.add('selected');
-        checkState[key] = btn.dataset.value;
-        evaluateCheck();
+        quizAnswers[field] = btn.dataset.value;
+        setTimeout(()=> goToStep(stepPointer+1), 180);
       });
     });
   });
 
-  function evaluateCheck(){
-    const {status, kondisi} = checkState;
-    if(!status || !kondisi) return;
-    const result = document.getElementById('checkResult');
-    const title = document.getElementById('resultTitle');
-    const desc = document.getElementById('resultDesc');
-    let name = '', text = '';
+  backBtn.addEventListener('click', ()=> goToStep(stepPointer-1));
 
-    if(status === 'pengajar'){
-      name = 'Beasiswa Pondok Pesantren';
-      text = 'Karena kamu mahasiswa aktif dan mengajar/mengasuh di pondok pesantren wilayah Bojonegoro, skema ini kemungkinan paling sesuai. Cek syarat lengkapnya di bagian "Jenis Beasiswa" di atas.';
-    } else if(status === 'lulusan' && kondisi === 'dtks'){
-      name = 'Beasiswa Keluarga Miskin';
-      text = 'Sebagai lulusan SMA/SMK/MA yang baru diterima kuliah dan berasal dari keluarga terdaftar DTKS/DTESN, skema ini kemungkinan paling sesuai untukmu.';
-    } else if(status === 'mahasiswa' && kondisi === 'skripsi'){
-      name = 'Beasiswa Tugas Akhir';
-      text = 'Karena kamu sedang menyusun tugas akhir, skema ini dirancang khusus untuk membantu penyelesaian studi di tahap akhir.';
-    } else if(status === 'mahasiswa' && kondisi === 'dtks'){
-      name = 'Beasiswa Keluarga Miskin';
-      text = 'Sebagai mahasiswa aktif dari keluarga terdaftar DTKS/DTESN, skema ini kemungkinan sesuai — pastikan juga usia dan IPS memenuhi syarat saat pertama diterima kuliah.';
-    } else {
-      name = 'Beasiswa Tugas Akhir atau Keluarga Miskin';
-      text = 'Berdasarkan jawabanmu, ada beberapa skema yang mungkin relevan. Cek detail syarat masing-masing di bagian "Jenis Beasiswa" untuk memastikan mana yang paling cocok.';
+  // scheme scoring engine based on official criteria
+  function scoreSchemes(){
+    const a = quizAnswers;
+    const schemes = [];
+
+    // Beasiswa Keluarga Miskin
+    {
+      const crit = [
+        {label:'Status: lulusan baru/mahasiswa aktif', met: a.status === 'lulusan' || a.status === 'mahasiswa'},
+        {label:'Usia ≤ 20 tahun saat diterima', met: a.usia === 'muda'},
+        {label:'Keluarga terdaftar DTKS/DTESN desil 1–5', met: a.dtks === 'ya', unknown: a.dtks === 'tidak_tahu'},
+        {label:'IPS/IPK minimal 2,75', met: a.ipk === 'menengah' || a.ipk === 'tinggi'},
+        {label:'Tidak menerima beasiswa lain', met: a.beasiswalain === 'tidak'},
+      ];
+      schemes.push({key:'miskin', icon:'🏠', name:'Beasiswa Keluarga Miskin', crit});
     }
 
-    title.textContent = name;
-    desc.textContent = text;
-    result.classList.add('show');
+    // Beasiswa Pondok Pesantren
+    {
+      const crit = [
+        {label:'Mengajar/mengasuh di ponpes wilayah Bojonegoro', met: a.status === 'ponpes'},
+        {label:'Usia ≤ 40 tahun saat diterima', met: a.usia === 'muda' || a.usia === 'sedang'},
+        {label:'IPS minimal 3,00 (atau prestasi akademik provinsi)', met: a.ipk === 'tinggi', unknown: a.ipk === 'menengah'},
+        {label:'Tidak menerima beasiswa lain', met: a.beasiswalain === 'tidak'},
+      ];
+      schemes.push({key:'ponpes', icon:'🕌', name:'Beasiswa Pondok Pesantren', crit});
+    }
+
+    // Beasiswa Tugas Akhir
+    {
+      const crit = [
+        {label:'Mahasiswa aktif S1/D4', met: a.status === 'mahasiswa' || a.status === 'ponpes'},
+        {label:'Sedang menyusun tugas akhir', met: a.tugasakhir === 'ya'},
+        {label:'IPK minimal 2,75', met: a.ipk === 'menengah' || a.ipk === 'tinggi'},
+        {label:'Keluarga terdaftar DTESN desil 1–5', met: a.dtks === 'ya', unknown: a.dtks === 'tidak_tahu'},
+      ];
+      schemes.push({key:'tugasakhir', icon:'🎓', name:'Beasiswa Tugas Akhir', crit});
+    }
+
+    // compute scores
+    schemes.forEach(s=>{
+      let earned = 0, total = s.crit.length;
+      s.crit.forEach(c=>{ earned += c.met ? 1 : (c.unknown ? 0.5 : 0); });
+      s.score = Math.round((earned/total)*100);
+    });
+
+    schemes.sort((x,y)=> y.score - x.score);
+    return schemes;
+  }
+
+  function scoreBadgeClass(score){
+    if(score >= 75) return 'high';
+    if(score >= 45) return 'mid';
+    return 'low';
+  }
+
+  function revealResult(){
+    document.querySelector('.quiz-progress').style.display = 'none';
+    stepLabel.style.display = 'none';
+    document.getElementById('quizNav').style.display = 'none';
+    stageEl.style.display = 'none';
+
+    const schemes = scoreSchemes();
+    const cardsWrap = document.getElementById('resultCards');
+    cardsWrap.innerHTML = '';
+
+    schemes.forEach(s=>{
+      const card = document.createElement('div');
+      card.className = 'result-card';
+      const cls = scoreBadgeClass(s.score);
+      const checklist = s.crit.map(c=>{
+        const mark = c.met ? '✅' : (c.unknown ? '➖' : '❌');
+        return '<li><span class="mark">'+mark+'</span><span>'+c.label+'</span></li>';
+      }).join('');
+      card.innerHTML =
+        '<div class="result-card-head">'+
+          '<div class="result-card-title"><span>'+s.icon+'</span><span>'+s.name+'</span></div>'+
+          '<span class="result-score '+cls+'">'+s.score+'% cocok</span>'+
+        '</div>'+
+        '<ul class="result-checklist">'+checklist+'</ul>';
+      cardsWrap.appendChild(card);
+    });
+
+    const note = document.getElementById('resultNote');
+    let noteText = '📌 Beasiswa Scientist dan Sepuluh Sarjana per Desa belum bisa dinilai kecocokannya karena masih menunggu Peraturan Bupati terbaru.';
+    if(quizAnswers.ipk === 'tinggi'){
+      noteText += ' IPK kamu tergolong tinggi — layak dipantau kalau skema Scientist dibuka lagi.';
+    }
+    note.textContent = noteText;
+
+    resultEl.classList.add('show');
+    checkerBox.scrollIntoView({behavior:'smooth', block:'nearest'});
   }
 
   document.getElementById('checkReset').addEventListener('click', ()=>{
-    checkState.status = null;
-    checkState.kondisi = null;
+    Object.keys(quizAnswers).forEach(k=> delete quizAnswers[k]);
     document.querySelectorAll('.check-opts button').forEach(b=>b.classList.remove('selected'));
-    document.getElementById('checkResult').classList.remove('show');
+    resultEl.classList.remove('show');
+    goToStep(0);
   });
+
+  // init first step
+  goToStep(0);
 
   // scroll reveal animation
   const revealEls = document.querySelectorAll('.reveal');
