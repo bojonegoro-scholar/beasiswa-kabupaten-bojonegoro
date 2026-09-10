@@ -437,6 +437,34 @@
   .credit-hint{font-size:0.72rem;color:var(--gold);margin-top:7px;}
   .credit-face.back .credit-name{color:var(--paper);margin-bottom:8px;}
   .credit-face.back p{margin:0;font-size:0.84rem;color:#C9D2CB;line-height:1.55;}
+
+  /* ---------- section rhythm (avoid monotony) ---------- */
+  section.section-alt{background:var(--paper-dim);}
+  h2.section-title .title-icon{margin-right:10px;}
+
+  /* ---------- stopmap legend ---------- */
+  .stopmap-legend{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 26px;}
+  .stopmap-chip{
+    display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
+    font-size:0.86rem;font-weight:600;border:1px solid var(--line);background:var(--paper);
+  }
+  .stopmap-chip .swatch{width:14px;height:18px;border-radius:2px;flex:none;}
+  .stopmap-chip.red .swatch{background:#B54A3B;}
+  .stopmap-chip.green .swatch{background:#3D6B4F;}
+
+  /* ---------- contact strip ---------- */
+  .contact-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line);
+  }
+  .contact-item{display:flex;align-items:flex-start;gap:12px;}
+  .contact-item .ci-icon{
+    width:36px;height:36px;border-radius:8px;background:var(--paper);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;flex:none;font-size:1rem;
+  }
+  .contact-item a, .contact-item span.ci-text{color:var(--text-dark);text-decoration:none;font-weight:600;font-size:0.92rem;}
+  .contact-item a:hover{color:var(--gold);}
+  .contact-item .ci-label{font-size:0.78rem;color:var(--text-muted);margin-bottom:2px;}
+  @media (max-width:760px){.contact-strip{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -497,10 +525,10 @@
   </div>
 </section>
 
-<section id="tentang">
+<section id="tentang" class="section-alt">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">01 — Latar Belakang</span></div>
-    <h2 class="section-title">Tentang program</h2>
+    <h2 class="section-title"><span class="title-icon">📋</span>Tentang program</h2>
     <div class="about-grid reveal">
       <div>
         <p>Beasiswa Bojonegoro merupakan komitmen Pemerintah Kabupaten Bojonegoro untuk memperluas akses pendidikan dan meningkatkan kualitas sumber daya manusia daerah. Program ini terbuka bagi pelajar dan mahasiswa dengan Nomor Induk Kependudukan (NIK) Bojonegoro yang memenuhi syarat di masing-masing skema.</p>
@@ -527,7 +555,7 @@
 <section id="cek">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">02 — Alat Bantu</span></div>
-    <h2 class="section-title">Cek skema yang mungkin cocok</h2>
+    <h2 class="section-title"><span class="title-icon">🎯</span>Cek skema yang mungkin cocok</h2>
     <p class="section-intro">Jawab beberapa pertanyaan singkat berikut. Pertanyaan akan menyesuaikan otomatis dari jawabanmu, dan hasilnya berupa skor kecocokan untuk tiap skema — bukan penetapan resmi, hanya panduan awal.</p>
 
     <div class="checker reveal" id="checkerBox">
@@ -617,7 +645,7 @@
 <section id="jenis">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">03 — Rincian Skema</span></div>
-    <h2 class="section-title">Lima jenis beasiswa</h2>
+    <h2 class="section-title"><span class="title-icon">📂</span>Lima jenis beasiswa</h2>
     <p class="section-intro">Setiap skema punya sasaran dan syarat berbeda. Pilih salah satu tab untuk melihat detail lengkap, kuota, dan status keberlangsungannya.</p>
 
     <div class="scheme-shell reveal">
@@ -748,10 +776,10 @@
 
 <hr class="divider">
 
-<section id="jadwal">
+<section id="jadwal" class="section-alt">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">04 — Linimasa</span></div>
-    <h2 class="section-title">Jadwal &amp; alur pendaftaran</h2>
+    <h2 class="section-title"><span class="title-icon">🗓️</span>Jadwal &amp; alur pendaftaran</h2>
     <p class="section-intro">Pendaftaran tahun 2026 dilaksanakan dalam dua gelombang. Berikut status masing-masing gelombang per 8 September 2026.</p>
 
     <div class="timeline reveal">
@@ -809,7 +837,7 @@
 <section id="penyaluran">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">05 — Data Penyaluran</span></div>
-    <h2 class="section-title">Penyaluran dana tahap 1B</h2>
+    <h2 class="section-title"><span class="title-icon">💰</span>Penyaluran dana tahap 1B</h2>
     <p class="section-intro">Dicairkan pada Juli 2026 kepada 2.670 mahasiswa penerima lanjutan, dengan rincian sebagai berikut.</p>
 
     <div class="disburse-grid reveal">
@@ -850,10 +878,10 @@
 
 <hr class="divider">
 
-<section id="faq">
+<section id="faq" class="section-alt">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">06 — Tanya Jawab</span></div>
-    <h2 class="section-title">Pertanyaan yang sering diajukan</h2>
+    <h2 class="section-title"><span class="title-icon">❓</span>Pertanyaan yang sering diajukan</h2>
 
     <input type="text" class="faq-search" id="faqSearch" placeholder="Cari pertanyaan, misalnya 'pencairan' atau 'gelombang'...">
 
@@ -878,18 +906,52 @@
         <button class="faq-q"><span>Kapan Beasiswa Scientist dan Sepuluh Sarjana per Desa dibuka lagi?</span><span class="plus"></span></button>
         <div class="faq-a"><p>Kedua skema ini masih menunggu penerbitan Peraturan Bupati terbaru sebagai dasar teknis pelaksanaan. Pengumuman resmi akan disampaikan setelah regulasi tersebut terbit.</p></div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Apa saja berkas yang memerlukan legalisir basah?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Berkas yang memerlukan legalisir basah meliputi KHS semester 1 hingga semester terakhir, Surat Keterangan Aktif Kuliah, Surat Keterangan Tidak Menerima Beasiswa Lain, serta Surat Keterangan Kebenaran Jumlah UKT dari perguruan tinggi.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Kapan dana beasiswa dicairkan ke rekening mahasiswa?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Pencairan dana menyesuaikan dengan proses verifikasi dan penyelesaian administrasi. Dana akan disalurkan langsung ke rekening mahasiswa penerima setelah seluruh tahapan selesai.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Apa warna stopmap yang digunakan untuk pengumpulan berkas?</span><span class="plus"></span></button>
+        <div class="faq-a">
+          <p>Berkas asli yang telah dilegalisir basah menggunakan stopmap berwarna merah, sedangkan berkas fotokopi menggunakan stopmap berwarna hijau.</p>
+          <div class="stopmap-legend">
+            <span class="stopmap-chip red"><span class="swatch"></span>Merah — berkas asli (legalisir basah)</span>
+            <span class="stopmap-chip green"><span class="swatch"></span>Hijau — berkas fotokopi</span>
+          </div>
+        </div>
+      </div>
     </div>
     <p class="faq-empty" id="faqEmpty">Tidak ada pertanyaan yang cocok dengan pencarianmu.</p>
   </div>
 </section>
 
 <div class="cta">
-  <div class="wrap cta-inner">
-    <div>
-      <h2>Butuh info lebih lanjut?</h2>
-      <p>Hubungi langsung Dinas Pendidikan Kabupaten Bojonegoro atau kunjungi laman resmi untuk formulir, juknis, dan pengumuman terbaru.</p>
+  <div class="wrap">
+    <div class="cta-inner">
+      <div>
+        <h2>Butuh info lebih lanjut?</h2>
+        <p>Hubungi langsung Dinas Pendidikan Kabupaten Bojonegoro atau kunjungi laman resmi untuk formulir, juknis, dan pengumuman terbaru.</p>
+      </div>
+      <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener" class="btn btn-gold">Kunjungi laman resmi</a>
     </div>
-    <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener" class="btn btn-gold">Kunjungi laman resmi</a>
+    <div class="contact-strip">
+      <div class="contact-item">
+        <span class="ci-icon">☎️</span>
+        <div><div class="ci-label">Telepon</div><a href="tel:+62353881580">(0353) 881580</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="ci-icon">✉️</span>
+        <div><div class="ci-label">Email</div><a href="mailto:diknasbjn@gmail.com">diknasbjn@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="ci-icon">📍</span>
+        <div><div class="ci-label">Alamat</div><span class="ci-text">Jl. Patimura No. 9, Bojonegoro</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -904,6 +966,7 @@
         <h5>Tautan resmi</h5>
         <a href="https://bojonegorokab.go.id" target="_blank" rel="noopener">bojonegorokab.go.id</a>
         <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener">dinaspendidikan.bojonegorokab.go.id</a>
+        <a href="tel:+62353881580">☎ (0353) 881580</a>
       </div>
       <div>
         <h5>Navigasi</h5>
