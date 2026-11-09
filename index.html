@@ -7,18 +7,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#22352F;
-    --ink-soft:#3A5148;
-    --paper:#FCFAF5;
-    --paper-dim:#F1ECDF;
-    --line:#E4DDC9;
-    --gold:#B4822C;
-    --gold-soft:#D9B267;
+    --ink:#0F2A4A;
+    --ink-soft:#1F4570;
+    --paper:#F7FAFD;
+    --paper-dim:#E9F1F9;
+    --line:#D3E0EE;
+    --gold:#1E5AA8;
+    --gold-soft:#8FD3F0;
     --clay:#A65B2E;
-    --text-dark:#22201A;
-    --text-muted:#6B6455;
+    --text-dark:#12202F;
+    --text-muted:#55657A;
     --green:#3D6B4F;
     --green-soft:#E7EFE7;
   }
@@ -45,7 +46,7 @@
   /* ---------- nav ---------- */
   header.nav{
     position:sticky; top:0; z-index:50;
-    background:rgba(252,250,245,0.92);
+    background:rgba(247,250,253,0.92);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
@@ -78,9 +79,9 @@
   }
   .hero-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulseDot 2.2s infinite;}
   @keyframes pulseDot{
-    0%{box-shadow:0 0 0 0 rgba(180,130,44,0.45);}
-    70%{box-shadow:0 0 0 7px rgba(180,130,44,0);}
-    100%{box-shadow:0 0 0 0 rgba(180,130,44,0);}
+    0%{box-shadow:0 0 0 0 rgba(30,90,168,0.45);}
+    70%{box-shadow:0 0 0 7px rgba(30,90,168,0);}
+    100%{box-shadow:0 0 0 0 rgba(30,90,168,0);}
   }
   .hero h1{
     font-size:clamp(2.1rem, 4.6vw, 3.2rem);
@@ -116,7 +117,7 @@
     background:var(--paper-dim);border:1px solid var(--line);border-radius:12px;
     padding:18px 16px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .stat:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(34,32,26,0.07);border-color:var(--gold-soft);}
+  .stat:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,42,74,0.07);border-color:var(--gold-soft);}
   .stat-icon{
     width:30px;height:30px;border-radius:8px;background:var(--paper);border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;font-size:0.85rem;margin-bottom:12px;
@@ -155,23 +156,23 @@
 
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;}
-  .about-grid p{margin:0 0 16px;color:#3A3024;font-size:0.98rem;}
+  .about-grid p{margin:0 0 16px;color:#1F2F44;font-size:0.98rem;}
   .about-side{
     background:linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 100%);
     color:var(--paper);
     padding:32px 28px;border-radius:12px;
     position:sticky; top:132px;
-    box-shadow:0 18px 40px rgba(34,53,47,0.16);
+    box-shadow:0 18px 40px rgba(15,42,74,0.16);
   }
   .side-chip{
-    display:inline-block;background:rgba(252,250,245,0.12);color:var(--gold-soft);
+    display:inline-block;background:rgba(247,250,253,0.12);color:var(--gold-soft);
     font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;
     padding:5px 12px;border-radius:999px;margin-bottom:16px;
   }
   .about-side h3{font-size:1.12rem;font-weight:600;margin:0 0 18px;color:var(--paper);}
   .about-side ul{margin:0;padding:0;list-style:none;}
   .about-side li{
-    padding:12px 0;border-top:1px solid rgba(252,250,245,0.14);
+    padding:12px 0;border-top:1px solid rgba(247,250,253,0.14);
     display:flex;gap:12px;align-items:flex-start;
     transition:padding-left .2s ease;
   }
@@ -179,7 +180,7 @@
   .about-side li:first-child{border-top:none;}
   .li-icon{
     width:30px;height:30px;border-radius:8px;flex:none;
-    background:rgba(252,250,245,0.1);display:flex;align-items:center;justify-content:center;
+    background:rgba(247,250,253,0.1);display:flex;align-items:center;justify-content:center;
     font-size:0.92rem;
   }
   .li-body{display:flex;flex-direction:column;gap:2px;}
@@ -195,10 +196,10 @@
     background:var(--ink);color:var(--paper);border-radius:8px;padding:36px 36px 30px;
   }
   .checker-head h3{color:var(--paper);font-size:1.28rem;margin:0 0 6px;}
-  .checker-head p{color:#C9D2CB;margin:0 0 26px;font-size:0.95rem;}
+  .checker-head p{color:#C5D5E6;margin:0 0 26px;font-size:0.95rem;}
 
-  .quiz-progress{height:5px;background:rgba(252,250,245,0.14);border-radius:999px;overflow:hidden;margin-bottom:10px;}
-  .quiz-progress-bar{height:100%;width:16.6%;background:var(--gold);border-radius:999px;transition:width .35s ease;}
+  .quiz-progress{height:5px;background:rgba(247,250,253,0.14);border-radius:999px;overflow:hidden;margin-bottom:10px;}
+  .quiz-progress-bar{height:100%;width:16.6%;background:var(--gold-soft);border-radius:999px;transition:width .35s ease;}
   .quiz-step-label{font-size:0.78rem;color:var(--gold-soft);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:24px;}
 
   .quiz-stage{position:relative;min-height:118px;}
@@ -213,22 +214,22 @@
   label.qlabel{display:block;font-size:0.92rem;color:var(--paper);font-weight:600;margin-bottom:14px;}
   .check-opts{display:flex;flex-wrap:wrap;gap:10px;}
   .check-opts button{
-    background:rgba(252,250,245,0.06);border:1px solid rgba(252,250,245,0.22);color:var(--paper);
+    background:rgba(247,250,253,0.06);border:1px solid rgba(247,250,253,0.22);color:var(--paper);
     padding:11px 18px;border-radius:999px;font-size:0.9rem;cursor:pointer;font-family:'Inter',sans-serif;
     transition:background .15s ease, border-color .15s ease, transform .15s ease;
   }
   .check-opts button:hover{border-color:var(--gold-soft);transform:translateY(-1px);}
-  .check-opts button.selected{background:var(--gold);border-color:var(--gold);color:#22201A;font-weight:600;}
+  .check-opts button.selected{background:var(--gold-soft);border-color:var(--gold-soft);color:#0F2A4A;font-weight:600;}
 
   .quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
   .quiz-nav-btn{
-    background:none;border:1px solid rgba(252,250,245,0.22);color:var(--paper);
+    background:none;border:1px solid rgba(247,250,253,0.22);color:var(--paper);
     padding:9px 16px;border-radius:6px;font-size:0.85rem;cursor:pointer;font-family:'Inter',sans-serif;
     transition:border-color .15s ease, opacity .15s ease;
   }
   .quiz-nav-btn:hover{border-color:var(--gold-soft);}
   .quiz-nav-btn:disabled{opacity:0.35;cursor:default;}
-  .quiz-nav-btn:disabled:hover{border-color:rgba(252,250,245,0.22);}
+  .quiz-nav-btn:disabled:hover{border-color:rgba(247,250,253,0.22);}
 
   .check-result{
     margin-top:8px;padding-top:0;border-top:none;display:none;position:relative;
@@ -246,7 +247,7 @@
   .result-tag{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gold-soft);font-weight:700;margin-bottom:6px;}
 
   .result-card{
-    background:rgba(252,250,245,0.05);border:1px solid rgba(252,250,245,0.14);border-radius:8px;
+    background:rgba(247,250,253,0.05);border:1px solid rgba(247,250,253,0.14);border-radius:8px;
     padding:18px 20px;margin-bottom:14px;
   }
   .result-card-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:4px;}
@@ -256,13 +257,13 @@
   }
   .result-score.high{background:var(--green-soft);color:var(--green);}
   .result-score.mid{background:#F3E2D1;color:#8A4B22;}
-  .result-score.low{background:rgba(252,250,245,0.12);color:#C9D2CB;}
+  .result-score.low{background:rgba(247,250,253,0.12);color:#C5D5E6;}
   .result-checklist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;}
-  .result-checklist li{font-size:0.86rem;color:#C9D2CB;display:flex;gap:8px;align-items:flex-start;}
+  .result-checklist li{font-size:0.86rem;color:#C5D5E6;display:flex;gap:8px;align-items:flex-start;}
   .result-checklist li .mark{flex:none;}
   .result-note{
-    background:rgba(252,250,245,0.05);border:1px solid rgba(252,250,245,0.14);border-radius:8px;
-    padding:14px 18px;font-size:0.86rem;color:#C9D2CB;margin-top:6px;margin-bottom:20px;
+    background:rgba(247,250,253,0.05);border:1px solid rgba(247,250,253,0.14);border-radius:8px;
+    padding:14px 18px;font-size:0.86rem;color:#C5D5E6;margin-top:6px;margin-bottom:20px;
   }
   .check-reset{background:none;border:none;color:var(--gold-soft);font-size:0.87rem;cursor:pointer;text-decoration:underline;padding:0;}
 
@@ -283,7 +284,7 @@
   .scheme-tab:last-child{border-right:none;}
   .scheme-tab .status-dot{
     display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:7px;
-    background:#A79E88;
+    background:#8EA3BA;
   }
   .scheme-tab.open .status-dot{background:var(--green);}
   .scheme-tab.pending .status-dot{background:var(--clay);}
@@ -353,7 +354,7 @@
 
   /* ---------- disbursement / chart ---------- */
   .disburse-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:44px;align-items:start;}
-  .disburse-note{color:#3A3024;}
+  .disburse-note{color:#1F2F44;}
   .disburse-note .big{font-family:'Source Serif 4',serif;font-size:clamp(1.7rem,7vw,2.3rem);color:var(--ink);font-weight:600;margin:6px 0 4px;}
   .disburse-note p{font-size:0.95rem;}
   .disburse-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -362,28 +363,29 @@
     padding:18px 20px;position:relative;overflow:hidden;
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .disburse-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(34,32,26,0.08);}
+  .disburse-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,42,74,0.08);}
   .disburse-card.lead{background:var(--ink);border-color:var(--ink);}
   .dc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:14px;}
   .dc-icon{
     width:34px;height:34px;border-radius:9px;background:var(--paper-dim);
     display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex:none;
   }
-  .disburse-card.lead .dc-icon{background:rgba(252,250,245,0.12);}
+  .disburse-card.lead .dc-icon{background:rgba(247,250,253,0.12);}
   .dc-share{
     font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:999px;
     background:var(--paper-dim);color:var(--text-muted);white-space:nowrap;
   }
-  .disburse-card.lead .dc-share{background:rgba(252,250,245,0.14);color:var(--gold-soft);}
+  .disburse-card.lead .dc-share{background:rgba(247,250,253,0.14);color:var(--gold-soft);}
   .dc-name{font-size:0.82rem;color:var(--text-muted);margin-bottom:4px;}
-  .disburse-card.lead .dc-name{color:#B9C4BE;}
+  .disburse-card.lead .dc-name{color:#AFC3D8;}
   .dc-num{
     font-family:'Source Serif 4',serif;font-size:clamp(1.4rem,5.5vw,1.85rem);font-weight:600;color:var(--ink);
     font-variant-numeric:tabular-nums;line-height:1;
   }
   .disburse-card.lead .dc-num{color:var(--paper);}
   .dc-bar{height:6px;background:var(--paper-dim);border-radius:999px;overflow:hidden;margin-top:14px;}
-  .disburse-card.lead .dc-bar{background:rgba(252,250,245,0.14);}
+  .disburse-card.lead .dc-bar{background:rgba(247,250,253,0.14);}
+  .disburse-card.lead .dc-bar-fill{background:var(--gold-soft);}
   .dc-bar-fill{height:100%;background:var(--gold);width:0%;border-radius:999px;transition:width 1.1s cubic-bezier(.2,.8,.2,1);}
   @media (max-width:800px){.disburse-grid{grid-template-columns:1fr;gap:34px;}}
   @media (max-width:520px){.disburse-cards{grid-template-columns:1fr;}}
@@ -434,7 +436,7 @@
 
   .disclaimer{
     background:var(--paper-dim);border-left:3px solid var(--clay);
-    padding:15px 18px;font-size:0.85rem;color:#5A4E3B;margin-top:40px;max-width:70ch;border-radius:0 4px 4px 0;
+    padding:15px 18px;font-size:0.85rem;color:#3B4C63;margin-top:40px;max-width:70ch;border-radius:0 4px 4px 0;
   }
 
   /* ---------- scroll reveal ---------- */
@@ -446,7 +448,7 @@
   .about-side, .checker, .scheme-shell, .credit-card{
     transition:box-shadow .25s ease, transform .25s ease;
   }
-  .about-side:hover, .scheme-shell:hover{box-shadow:0 10px 28px rgba(34,32,26,0.06);}
+  .about-side:hover, .scheme-shell:hover{box-shadow:0 10px 28px rgba(15,42,74,0.06);}
   .stat{transition:transform .2s ease;}
   .stat:hover{transform:translateY(-3px);}
   .t-item, .step{transition:transform .2s ease;}
@@ -465,7 +467,7 @@
     display:flex;align-items:center;justify-content:center;font-size:1.1rem;
     opacity:0;pointer-events:none;transform:translateY(8px);
     transition:opacity .25s ease, transform .25s ease;
-    box-shadow:0 8px 22px rgba(34,32,26,0.22);z-index:60;
+    box-shadow:0 8px 22px rgba(15,42,74,0.22);z-index:60;
   }
   .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
   .back-to-top:hover{background:var(--ink-soft);}
@@ -494,7 +496,7 @@
   }
   .credit-avatar{
     width:44px;height:44px;border-radius:50%;flex:none;
-    background:linear-gradient(135deg,var(--gold),var(--clay));color:#fff;
+    background:linear-gradient(135deg,var(--gold),var(--ink));color:#fff;
     display:flex;align-items:center;justify-content:center;
     font-family:'Source Serif 4',serif;font-weight:700;font-size:0.95rem;letter-spacing:0.02em;
   }
@@ -502,7 +504,7 @@
   .credit-role{font-size:0.78rem;color:var(--text-muted);margin-top:3px;line-height:1.4;}
   .credit-hint{font-size:0.72rem;color:var(--gold);margin-top:7px;}
   .credit-face.back .credit-name{color:var(--paper);margin-bottom:8px;}
-  .credit-face.back p{margin:0;font-size:0.84rem;color:#C9D2CB;line-height:1.55;}
+  .credit-face.back p{margin:0;font-size:0.84rem;color:#C5D5E6;line-height:1.55;}
 
   /* ---------- section rhythm (avoid monotony) ---------- */
   section.section-alt{background:var(--paper-dim);}
@@ -553,6 +555,197 @@
     h2.section-title{max-width:none;}
     .stat{padding:16px 14px;}
   }
+
+  /* ---------- palet kreatif: biru dasar + aksen warna-warni ---------- */
+  .hero{background:linear-gradient(135deg,#E6F0FF 0%,#F1EBFF 52%,#FFEDE5 100%);}
+  .hero::before{content:"";position:absolute;left:-140px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,96,76,.22),transparent 70%);pointer-events:none;}
+  .hero::after{content:"";position:absolute;right:12%;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(122,90,240,.20),transparent 70%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;}
+  .hero-motif path:first-child{fill:#7A5AF0;}
+  .hero-motif{opacity:0.09;}
+  .hero-tag .dot{background:#E8604C;}
+  .hero h1 .accent{background:linear-gradient(90deg,#1E5AA8,#7A5AF0 60%,#E8604C);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat:nth-child(1){background:#FFF3D6;border-color:#F3DB9C;}
+  .stat:nth-child(2){background:#EEE8FF;border-color:#D5C8FA;}
+  .stat:nth-child(3){background:#DCF3EF;border-color:#ACDFD7;}
+  .stat:nth-child(4){background:#FFE7DF;border-color:#F5C4B5;}
+  .stat .stat-icon{border:none;}
+  .stat:nth-child(1) .stat-icon{background:#FBD983;}
+  .stat:nth-child(2) .stat-icon{background:#CDBDFA;}
+  .stat:nth-child(3) .stat-icon{background:#9FDCD2;}
+  .stat:nth-child(4) .stat-icon{background:#F6B7A4;}
+  #tentang.section-alt{background:#E8F2FD;}
+  #jadwal.section-alt{background:#F2EDFF;}
+  #faq.section-alt{background:#E4F5F1;}
+  #tentang .section-index{color:#1E5AA8;}
+  #cek .section-index{color:#C9452B;}
+  #jenis .section-index{color:#0B7C74;}
+  #jadwal .section-index{color:#5B3FD0;}
+  #penyaluran .section-index{color:#A86A00;}
+  #faq .section-index{color:#0B7C74;}
+  .about-side{background:linear-gradient(165deg,#0F2A4A 0%,#1E4C96 100%);}
+  .checker{background:linear-gradient(135deg,#0F2A4A 0%,#1E4C96 55%,#5B3FD0 100%);}
+  .result-card:nth-child(1){border-left:4px solid #F5C451;}
+  .result-card:nth-child(2){border-left:4px solid #5FD0C2;}
+  .result-card:nth-child(3){border-left:4px solid #F4906F;}
+  /* skema: satu warna per skema */
+  .scheme-tab[data-panel="miskin"] .status-dot{background:#EF6B4A;}
+  .scheme-tab[data-panel="ponpes"] .status-dot{background:#119E94;}
+  .scheme-tab[data-panel="tugasakhir"] .status-dot{background:#E9A21B;}
+  .scheme-tab[data-panel="scientist"] .status-dot{background:#7A5AF0;}
+  .scheme-tab[data-panel="desa"] .status-dot{background:#1E8FE1;}
+  .scheme-tab[data-panel="miskin"].active::after,#panel-miskin{--c:#EF6B4A;}
+  .scheme-tab[data-panel="miskin"].active::after{background:#EF6B4A;}
+  .scheme-tab[data-panel="ponpes"].active::after{background:#119E94;}
+  .scheme-tab[data-panel="tugasakhir"].active::after{background:#E9A21B;}
+  .scheme-tab[data-panel="scientist"].active::after{background:#7A5AF0;}
+  .scheme-tab[data-panel="desa"].active::after{background:#1E8FE1;}
+  #panel-miskin{border-top:5px solid #EF6B4A;}
+  #panel-ponpes{border-top:5px solid #119E94;}
+  #panel-tugasakhir{border-top:5px solid #E9A21B;}
+  #panel-scientist{border-top:5px solid #7A5AF0;}
+  #panel-desa{border-top:5px solid #1E8FE1;}
+  #panel-miskin .req-col h4,#panel-miskin .req-col li::before{color:#C9452B;}
+  #panel-ponpes .req-col h4{color:#0B7C74;}
+  #panel-tugasakhir .req-col h4{color:#A86A00;}
+  #panel-scientist .req-col h4{color:#5B3FD0;}
+  #panel-desa .req-col h4{color:#136DB5;}
+  #panel-miskin .req-col li::before{background:#EF6B4A;}
+  #panel-ponpes .req-col li::before{background:#119E94;}
+  #panel-tugasakhir .req-col li::before{background:#E9A21B;}
+  #panel-scientist .req-col li::before{background:#7A5AF0;}
+  #panel-desa .req-col li::before{background:#1E8FE1;}
+  /* timeline & alur */
+  .t-item:not(.closed)::before{border-color:#E8604C;}
+  .t-item:not(.closed) .t-date{color:#C9452B;}
+  .step .num{border:none;color:#fff;}
+  .step:nth-child(1) .num{background:#1E5AA8;}
+  .step:nth-child(2) .num{background:#7A5AF0;}
+  .step:nth-child(3) .num{background:#119E94;}
+  .step:nth-child(4) .num{background:#E9A21B;color:#2B2000;}
+  .step:nth-child(5) .num{background:#E8604C;}
+  /* data penyaluran */
+  .disburse-card.lead{border-top:4px solid #8FD3F0;}
+  .disburse-card:nth-child(2){border-top:4px solid #7A5AF0;}
+  .disburse-card:nth-child(3){border-top:4px solid #EF6B4A;}
+  .disburse-card:nth-child(4){border-top:4px solid #119E94;}
+  .disburse-card:nth-child(2) .dc-bar-fill{background:#7A5AF0;}
+  .disburse-card:nth-child(3) .dc-bar-fill{background:#EF6B4A;}
+  .disburse-card:nth-child(4) .dc-bar-fill{background:#119E94;}
+  .disburse-card:nth-child(2) .dc-icon{background:#EEE8FF;}
+  .disburse-card:nth-child(3) .dc-icon{background:#FFE7DF;}
+  .disburse-card:nth-child(4) .dc-icon{background:#DCF3EF;}
+  /* ajakan & footer */
+  .cta{background:linear-gradient(120deg,#E3EEFF 0%,#EDE6FF 55%,#FFE9E1 100%);}
+  .faq-q .plus::before,.faq-q .plus::after{background:#E8604C;}
+  .btn-gold{background:linear-gradient(120deg,#0F2A4A,#1E5AA8);}
+  .btn-gold:hover{background:linear-gradient(120deg,#1E5AA8,#5B3FD0);}
+
+  /* ---------- gaya anak muda: tipografi tebal, bayangan keras, gerak ---------- */
+  h1,h2,h3,h4,.serif,.brand,.stat .num,.dc-num,.disburse-note .big,.credit-name,.faq-q,.section-index,.result-card-title,.t-item h4,.step h4{font-family:'Bricolage Grotesque','Inter',sans-serif;letter-spacing:-0.02em;}
+  .hero h1{font-weight:800;}
+  .progress{height:4px;background:linear-gradient(90deg,#1E5AA8,#7A5AF0,#E8604C,#FFD23F);overflow:visible;}
+  .progress::after{content:"";position:absolute;right:-10px;top:-4px;font-size:18px;}
+  .btn{border:2px solid #0F2A4A;box-shadow:4px 4px 0 #0F2A4A;transition:transform .12s ease, box-shadow .12s ease, background .15s ease;}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #0F2A4A;}
+  .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #0F2A4A;}
+  .btn-gold{background:#FFD23F;color:#0F2A4A;}
+  .btn-gold:hover{background:#FFC400;}
+  .btn-ghost{background:#fff;color:#0F2A4A;}
+  .btn-ghost:hover{background:#fff;}
+  .stat{border:2px solid #0F2A4A;box-shadow:4px 4px 0 #0F2A4A;}
+  .stat:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #0F2A4A;border-color:#0F2A4A;}
+  .disburse-card{border-color:#0F2A4A;box-shadow:4px 4px 0 #0F2A4A;}
+  .disburse-card:hover{box-shadow:6px 6px 0 #0F2A4A;transform:translate(-2px,-2px);}
+  .scheme-shell{border:2px solid #0F2A4A;box-shadow:6px 6px 0 #0F2A4A;}
+  .scheme-shell:hover{box-shadow:6px 6px 0 #0F2A4A;}
+  .checker{border:2px solid #0F2A4A;box-shadow:6px 6px 0 #FFD23F;}
+  .stat:nth-child(1),.stat:nth-child(2),.stat:nth-child(3),.stat:nth-child(4){border-color:#0F2A4A;}
+  .hero::before{animation:drift 12s ease-in-out infinite alternate;}
+  .hero::after{animation:drift 15s ease-in-out infinite alternate-reverse;}
+  @keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,-30px) scale(1.12);}}
+  .sticker{position:absolute;z-index:2;font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#0F2A4A;text-decoration:none;
+    border:2px solid #0F2A4A;border-radius:14px;padding:10px 16px;box-shadow:4px 4px 0 #0F2A4A;animation:floaty 4s ease-in-out infinite;}
+  .sticker.s1{right:48px;top:96px;background:#FFD23F;transform:rotate(-6deg);}
+  .sticker.s2{right:150px;top:176px;background:#FF8A5B;transform:rotate(5deg);animation-delay:-2s;}
+  .sticker:hover{box-shadow:6px 6px 0 #0F2A4A;}
+  @keyframes floaty{0%,100%{translate:0 0;}50%{translate:0 -10px;}}
+  @media (max-width:900px){.sticker{display:none;}}
+  .ticker{background:#0F2A4A;border-top:2px solid #0F2A4A;border-bottom:2px solid #0F2A4A;overflow:hidden;white-space:nowrap;padding:12px 0;}
+  .ticker-track{display:inline-block;animation:tick 38s linear infinite;font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;color:#fff;}
+  .ticker-track span{margin:0 18px;}
+  .ticker-track .hl{color:#FFD23F;}
+  @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  /* ceklis berkas */
+  #berkas{background:#FFF6DA;}
+  #berkas .section-index{color:#A86A00;}
+  .berkas-box{max-width:760px;background:#fff;border:2px solid #0F2A4A;border-radius:18px;box-shadow:6px 6px 0 #FF8A5B;padding:28px;}
+  .berkas-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+  .berkas-msg{font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#0F2A4A;}
+  .berkas-count{background:#FFD23F;border:2px solid #0F2A4A;border-radius:999px;padding:4px 14px;font-weight:700;font-size:0.9rem;color:#0F2A4A;font-variant-numeric:tabular-nums;}
+  .berkas-bar{height:16px;background:#E8EEF7;border:2px solid #0F2A4A;border-radius:999px;overflow:hidden;margin-bottom:20px;}
+  .berkas-fill{height:100%;width:0%;background:linear-gradient(90deg,#119E94,#7A5AF0,#E8604C);transition:width .4s cubic-bezier(.2,.8,.2,1);}
+  .berkas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .berkas-item{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;border:2px solid #D3E0EE;border-radius:12px;cursor:pointer;background:#fff;transition:background .15s ease,border-color .15s ease,transform .12s ease;font-size:0.94rem;line-height:1.5;}
+  .berkas-item:hover{border-color:#0F2A4A;transform:translateX(3px);}
+  .berkas-item input{position:absolute;opacity:0;pointer-events:none;}
+  .berkas-item .box{flex:none;width:26px;height:26px;border:2px solid #0F2A4A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:transparent;background:#fff;transition:background .15s ease,transform .15s ease;}
+  .berkas-item input:focus-visible + .box{outline:3px solid #7A5AF0;outline-offset:2px;}
+  .berkas-item input:checked + .box{background:#FFD23F;color:#0F2A4A;transform:rotate(-8deg) scale(1.08);}
+  .berkas-item.done{background:#E4F5F1;border-color:#119E94;color:#4C6B66;}
+  .berkas-note{margin:18px 0 0;font-size:0.82rem;color:#55657A;}
+  canvas.confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:200;}
+  @media (prefers-reduced-motion:reduce){.ticker-track,.sticker,.hero::before,.hero::after{animation:none;}}
+
+  /* ---------- finishing profesional ---------- */
+  .title-icon,.stat-icon,.li-icon,.dc-icon,.ci-icon{display:none;}
+  .progress{height:3px;background:linear-gradient(90deg,#1E5AA8,#7A5AF0);}
+  .progress::after{content:none;}
+  .hero{background:linear-gradient(135deg,#EAF2FD 0%,#F2F0FD 60%,#FBF1EE 100%);}
+  .hero::before,.hero::after{animation:none;opacity:.7;}
+  .hero-tag .dot{background:#1E5AA8;}
+  .hero h1{font-weight:700;}
+  .hero h1 .accent{background:linear-gradient(90deg,#1E5AA8,#5B3FD0);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .btn{border:1px solid transparent;box-shadow:0 4px 14px rgba(15,42,74,.18);}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(15,42,74,.22);}
+  .btn:active{transform:none;box-shadow:0 2px 8px rgba(15,42,74,.2);}
+  .btn-gold{background:linear-gradient(120deg,#0F2A4A,#1E5AA8);color:#fff;}
+  .btn-gold:hover{background:linear-gradient(120deg,#1E5AA8,#2C6FC8);}
+  .btn-ghost{background:#fff;border-color:#BFD3E8;box-shadow:none;color:#0F2A4A;}
+  .btn-ghost:hover{background:#fff;border-color:#1E5AA8;box-shadow:none;}
+  .stat,.stat:nth-child(1),.stat:nth-child(2),.stat:nth-child(3),.stat:nth-child(4){background:#fff;border:1px solid #D3E0EE;box-shadow:0 2px 8px rgba(15,42,74,.05);}
+  .stat:nth-child(1){border-top:4px solid #E9A21B;}
+  .stat:nth-child(2){border-top:4px solid #7A5AF0;}
+  .stat:nth-child(3){border-top:4px solid #119E94;}
+  .stat:nth-child(4){border-top:4px solid #EF6B4A;}
+  .stat:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,42,74,.10);}
+  .scheme-shell,.scheme-shell:hover{border:1px solid #D3E0EE;box-shadow:0 6px 24px rgba(15,42,74,.08);}
+  .checker{border:none;box-shadow:0 12px 32px rgba(15,42,74,.25);background:linear-gradient(135deg,#0F2A4A 0%,#1E4C96 100%);}
+  .result-checklist li .mark{width:16px;text-align:center;font-weight:700;}
+  .result-checklist li.ok .mark{color:#7BE0B8;}
+  .result-checklist li.no .mark{color:#F5A08E;}
+  .result-checklist li.unk .mark{color:#C5D5E6;}
+  .req-col li::before{width:6px;height:6px;border-radius:50%;top:1.05em;}
+  .step .num,.step:nth-child(n) .num{background:#1E5AA8;color:#fff;}
+  .t-item:not(.closed)::before{border-color:#1E5AA8;}
+  .t-item:not(.closed) .t-date{color:#1E5AA8;}
+  .disburse-card:nth-child(n){box-shadow:0 2px 8px rgba(15,42,74,.05);border-left-color:#D3E0EE;border-right-color:#D3E0EE;border-bottom-color:#D3E0EE;}
+  .disburse-card.lead{border-left-color:#0F2A4A;border-right-color:#0F2A4A;border-bottom-color:#0F2A4A;}
+  .disburse-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,42,74,.10);}
+  .dc-top{justify-content:flex-start;}
+  .faq-q .plus::before,.faq-q .plus::after{background:#1E5AA8;}
+  .cta{background:linear-gradient(120deg,#E3EEFF 0%,#EEF1FB 100%);}
+  #berkas{background:#EEF4FB;}
+  #berkas .section-index{color:#1E5AA8;}
+  .berkas-box{border:1px solid #D3E0EE;box-shadow:0 8px 24px rgba(15,42,74,.10);border-radius:14px;}
+  .berkas-count{background:#E8F2FD;border:1px solid #BFD3E8;color:#0F2A4A;}
+  .berkas-bar{border:1px solid #BFD3E8;height:12px;}
+  .berkas-fill{background:linear-gradient(90deg,#1E5AA8,#119E94);}
+  .berkas-item{border:1px solid #D3E0EE;}
+  .berkas-item:hover{transform:none;border-color:#1E5AA8;}
+  .berkas-item .box{border:2px solid #9DB6D0;border-radius:6px;}
+  .berkas-item input:checked + .box{background:#1E5AA8;border-color:#1E5AA8;color:#fff;transform:none;}
+  .berkas-item.done{background:#EAF2FD;border-color:#1E5AA8;color:#2F4A6B;}
 </style>
 </head>
 <body>
@@ -563,8 +756,8 @@
   <div class="nav-inner">
     <div class="brand">
       <svg class="mark" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="15" stroke="#B4822C" stroke-width="1.3"/>
-        <path d="M16 6 C20 11 22 14 16 26 C10 14 12 11 16 6Z" fill="#B4822C"/>
+        <circle cx="16" cy="16" r="15" stroke="#1E5AA8" stroke-width="1.3"/>
+        <path d="M16 6 C20 11 22 14 16 26 C10 14 12 11 16 6Z" fill="#1E5AA8"/>
       </svg>
       Beasiswa Bojonegoro
     </div>
@@ -593,8 +786,8 @@
 
 <section class="hero">
   <svg class="hero-motif" viewBox="0 0 400 400" fill="none">
-    <path d="M200 20 C260 90 300 140 260 220 C230 280 180 320 200 380 C120 340 60 260 80 180 C100 100 150 40 200 20Z" fill="#22352F"/>
-    <path d="M200 60 C240 110 265 150 240 210 C220 255 190 285 200 330" stroke="#B4822C" stroke-width="1.5" fill="none"/>
+    <path d="M200 20 C260 90 300 140 260 220 C230 280 180 320 200 380 C120 340 60 260 80 180 C100 100 150 40 200 20Z" fill="#0F2A4A"/>
+    <path d="M200 60 C240 110 265 150 240 210 C220 255 190 285 200 330" stroke="#1E5AA8" stroke-width="1.5" fill="none"/>
   </svg>
   <div class="wrap">
     <span class="hero-tag"><span class="dot"></span> Dinas Pendidikan Kabupaten Bojonegoro · Tahun Anggaran 2026</span>
@@ -605,10 +798,10 @@
       <a href="#jenis" class="btn btn-ghost">Lihat semua skema</a>
     </div>
     <div class="stat-row" id="statRow">
-      <div class="stat"><span class="stat-icon">💰</span><div class="num" data-count="40.4" data-suffix=" M" data-prefix="Rp">Rp0 M</div><div class="label">Anggaran program tahun 2026</div></div>
-      <div class="stat"><span class="stat-icon">📂</span><div class="num" data-count="5" data-suffix="">0</div><div class="label">Skema beasiswa yang tersedia</div></div>
-      <div class="stat"><span class="stat-icon">🎓</span><div class="num" data-count="2670" data-suffix="">0</div><div class="label">Penerima tahap 1B (Jul 2026)</div></div>
-      <div class="stat"><span class="stat-icon">🔁</span><div class="num" data-count="2" data-suffix="×">0</div><div class="label">Gelombang pendaftaran per tahun</div></div>
+      <div class="stat"><span class="stat-icon"></span><div class="num" data-count="40.4" data-suffix=" M" data-prefix="Rp">Rp0 M</div><div class="label">Anggaran program tahun 2026</div></div>
+      <div class="stat"><span class="stat-icon"></span><div class="num" data-count="5" data-suffix="">0</div><div class="label">Skema beasiswa yang tersedia</div></div>
+      <div class="stat"><span class="stat-icon"></span><div class="num" data-count="2670" data-suffix="">0</div><div class="label">Penerima tahap 1B (Jul 2026)</div></div>
+      <div class="stat"><span class="stat-icon"></span><div class="num" data-count="2" data-suffix="×">0</div><div class="label">Gelombang pendaftaran per tahun</div></div>
     </div>
   </div>
 </section>
@@ -616,7 +809,7 @@
 <section id="tentang" class="section-alt">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">01 — Latar Belakang</span></div>
-    <h2 class="section-title"><span class="title-icon">📋</span>Tentang program</h2>
+    <h2 class="section-title"><span class="title-icon"></span>Tentang program</h2>
     <div class="about-grid reveal">
       <div>
         <p>Beasiswa Bojonegoro merupakan komitmen Pemerintah Kabupaten Bojonegoro untuk memperluas akses pendidikan dan meningkatkan kualitas sumber daya manusia daerah. Program ini terbuka bagi pelajar dan mahasiswa dengan Nomor Induk Kependudukan (NIK) Bojonegoro yang memenuhi syarat di masing-masing skema.</p>
@@ -627,12 +820,12 @@
         <span class="side-chip">Ringkasan</span>
         <h3>Sekilas program</h3>
         <ul>
-          <li><span class="li-icon">🏛️</span><span class="li-body"><span class="li-label">Pengelola</span><b>Dinas Pendidikan Kab. Bojonegoro</b></span></li>
-          <li><span class="li-icon">🎯</span><span class="li-body"><span class="li-label">Sasaran</span><b>Warga ber-NIK Bojonegoro</b></span></li>
-          <li><span class="li-icon">🎓</span><span class="li-body"><span class="li-label">Jenjang</span><b>SMA/SMK/MA &amp; S1/D4</b></span></li>
-          <li><span class="li-icon">💳</span><span class="li-body"><span class="li-label">Bentuk bantuan</span><b>Penggantian biaya UKT</b></span></li>
-          <li><span class="li-icon">🏦</span><span class="li-body"><span class="li-label">Mekanisme cair</span><b>Transfer ke rekening penerima</b></span></li>
-          <li><span class="li-icon">✅</span><span class="li-body"><span class="li-label">Syarat akreditasi</span><b>Prodi minimal B</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Pengelola</span><b>Dinas Pendidikan Kab. Bojonegoro</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Sasaran</span><b>Warga ber-NIK Bojonegoro</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Jenjang</span><b>SMA/SMK/MA &amp; S1/D4</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Bentuk bantuan</span><b>Penggantian biaya UKT</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Mekanisme cair</span><b>Transfer ke rekening penerima</b></span></li>
+          <li><span class="li-icon"></span><span class="li-body"><span class="li-label">Syarat akreditasi</span><b>Prodi minimal B</b></span></li>
         </ul>
       </aside>
     </div>
@@ -644,13 +837,13 @@
 <section id="cek">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">02 — Alat Bantu</span></div>
-    <h2 class="section-title"><span class="title-icon">🎯</span>Cek skema yang mungkin cocok</h2>
+    <h2 class="section-title"><span class="title-icon"></span>Cek skema yang mungkin cocok</h2>
     <p class="section-intro">Jawab beberapa pertanyaan singkat berikut. Pertanyaan akan menyesuaikan otomatis dari jawabanmu, dan hasilnya berupa skor kecocokan untuk tiap skema — bukan penetapan resmi, hanya panduan awal.</p>
 
     <div class="checker reveal" id="checkerBox">
       <div class="checker-head">
-        <h3>🎯 Pencocokan skema beasiswa</h3>
-        <p>Isi profil singkatmu, lihat skema mana yang paling nyambung.</p>
+        <h3> Pencocokan skema beasiswa</h3>
+        <p>Isi profil singkatmu untuk melihat skema yang paling sesuai.</p>
       </div>
 
       <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
@@ -661,52 +854,52 @@
         <div class="quiz-step" data-step="status">
           <label class="qlabel">Status kamu sekarang</label>
           <div class="check-opts" data-field="status">
-            <button data-value="lulusan">🎓 Lulusan SMA/SMK/MA, baru diterima kuliah</button>
-            <button data-value="mahasiswa">📘 Mahasiswa aktif S1/D4</button>
-            <button data-value="ponpes">🕌 Mahasiswa aktif &amp; mengajar/mengasuh di ponpes</button>
+            <button data-value="lulusan"> Lulusan SMA/SMK/MA, baru diterima kuliah</button>
+            <button data-value="mahasiswa"> Mahasiswa aktif S1/D4</button>
+            <button data-value="ponpes"> Mahasiswa aktif &amp; mengajar/mengasuh di ponpes</button>
           </div>
         </div>
 
         <div class="quiz-step" data-step="dtks">
           <label class="qlabel">Apakah keluargamu terdaftar DTKS/DTSEN (desil 1–5)?</label>
           <div class="check-opts" data-field="dtks">
-            <button data-value="ya">✅ Ya, terdaftar</button>
-            <button data-value="tidak">❌ Tidak</button>
-            <button data-value="tidak_tahu">🤔 Belum tahu / perlu dicek</button>
+            <button data-value="ya"> Ya, terdaftar</button>
+            <button data-value="tidak"> Tidak</button>
+            <button data-value="tidak_tahu"> Belum tahu / perlu dicek</button>
           </div>
         </div>
 
         <div class="quiz-step" data-step="usia">
           <label class="qlabel">Usiamu saat pertama diterima sebagai mahasiswa</label>
           <div class="check-opts" data-field="usia">
-            <button data-value="muda">🧒 20 tahun atau lebih muda</button>
-            <button data-value="sedang">🧑 21–40 tahun</button>
-            <button data-value="tua">🧓 Lebih dari 40 tahun</button>
+            <button data-value="muda"> 20 tahun atau lebih muda</button>
+            <button data-value="sedang"> 21–40 tahun</button>
+            <button data-value="tua"> Lebih dari 40 tahun</button>
           </div>
         </div>
 
         <div class="quiz-step" data-step="ipk">
           <label class="qlabel">IPK/IPS kamu saat ini kira-kira berapa?</label>
           <div class="check-opts" data-field="ipk">
-            <button data-value="rendah">📉 Di bawah 2,75</button>
-            <button data-value="menengah">📊 2,75 – 2,99</button>
-            <button data-value="tinggi">📈 3,00 ke atas</button>
+            <button data-value="rendah"> Di bawah 2,75</button>
+            <button data-value="menengah"> 2,75 – 2,99</button>
+            <button data-value="tinggi"> 3,00 ke atas</button>
           </div>
         </div>
 
         <div class="quiz-step" data-step="tugasakhir">
           <label class="qlabel">Apakah kamu sedang menyusun tugas akhir/skripsi?</label>
           <div class="check-opts" data-field="tugasakhir">
-            <button data-value="ya">✅ Ya, sedang menyusun</button>
-            <button data-value="tidak">❌ Belum / tidak</button>
+            <button data-value="ya"> Ya, sedang menyusun</button>
+            <button data-value="tidak"> Belum / tidak</button>
           </div>
         </div>
 
         <div class="quiz-step" data-step="beasiswalain">
           <label class="qlabel">Apakah sedang menerima beasiswa dari sumber lain?</label>
           <div class="check-opts" data-field="beasiswalain">
-            <button data-value="ya">✅ Ya, sedang menerima</button>
-            <button data-value="tidak">❌ Tidak sedang menerima</button>
+            <button data-value="ya"> Ya, sedang menerima</button>
+            <button data-value="tidak"> Tidak sedang menerima</button>
           </div>
         </div>
 
@@ -717,7 +910,6 @@
       </div>
 
       <div class="check-result" id="checkResult">
-        <div class="result-burst" id="resultBurst">🎉✨🎓✨🎉</div>
         <div class="result-tag">Hasil pencocokan</div>
         <h4 style="color:var(--paper);margin:0 0 4px;font-size:1.15rem;">Berikut skema yang paling relevan dengan profilmu</h4>
         <p style="margin:0 0 22px;">Skor dihitung dari kriteria resmi tiap skema. Skor tinggi = banyak syarat yang cocok, bukan jaminan lolos seleksi.</p>
@@ -734,21 +926,21 @@
 <section id="jenis">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">03 — Rincian Skema</span></div>
-    <h2 class="section-title"><span class="title-icon">📂</span>Lima jenis beasiswa</h2>
+    <h2 class="section-title"><span class="title-icon"></span>Lima jenis beasiswa</h2>
     <p class="section-intro">Setiap skema punya sasaran dan syarat berbeda. Pilih salah satu tab untuk melihat detail lengkap, kuota, dan status keberlangsungannya.</p>
 
     <div class="scheme-shell reveal">
       <div class="scheme-tabs" id="schemeTabs">
-        <button class="scheme-tab active open" data-panel="miskin"><span class="status-dot"></span>🏠 Keluarga Miskin</button>
-        <button class="scheme-tab open" data-panel="ponpes"><span class="status-dot"></span>🕌 Pondok Pesantren</button>
-        <button class="scheme-tab open" data-panel="tugasakhir"><span class="status-dot"></span>🎓 Tugas Akhir</button>
-        <button class="scheme-tab pending" data-panel="scientist"><span class="status-dot"></span>🔬 Scientist</button>
-        <button class="scheme-tab pending" data-panel="desa"><span class="status-dot"></span>🏘️ Sepuluh Sarjana/Desa</button>
+        <button class="scheme-tab active open" data-panel="miskin"><span class="status-dot"></span> Keluarga Miskin</button>
+        <button class="scheme-tab open" data-panel="ponpes"><span class="status-dot"></span> Pondok Pesantren</button>
+        <button class="scheme-tab open" data-panel="tugasakhir"><span class="status-dot"></span> Tugas Akhir</button>
+        <button class="scheme-tab pending" data-panel="scientist"><span class="status-dot"></span> Scientist</button>
+        <button class="scheme-tab pending" data-panel="desa"><span class="status-dot"></span> Sepuluh Sarjana/Desa</button>
       </div>
 
       <div class="scheme-panel active" id="panel-miskin">
-        <div class="scheme-head"><h3>🏠 Beasiswa Keluarga Miskin</h3><span class="badge open">Dibuka tiap gelombang</span></div>
-        <p class="scheme-desc">Ditujukan bagi lulusan SMA/SMK/MA sederajat asal Bojonegoro dari keluarga dengan keterbatasan ekonomi yang baru diterima di perguruan tinggi.</p>
+        <div class="scheme-head"><h3> Beasiswa Keluarga Miskin</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <p class="scheme-desc">Ditujukan bagi mahasiswa S1/D4 penduduk asli Bojonegoro dari keluarga dengan keterbatasan ekonomi.</p>
         <div class="req-grid">
           <div class="req-col">
             <h4>Syarat utama</h4>
@@ -762,7 +954,7 @@
           <div class="req-col">
             <h4>Dokumen &amp; ketentuan</h4>
             <ul>
-              <li>Lulusan SMA/SMK/MA sederajat di Kabupaten Bojonegoro</li>
+              <li>Penduduk asli Bojonegoro (ber-NIK Bojonegoro)</li>
               <li>Bukti nilai ujian sekolah tertinggi di desanya</li>
               <li>Bukti diterima di PTN/PTS wilayah Bojonegoro</li>
               <li>Tidak sedang menerima beasiswa dari sumber lain</li>
@@ -773,7 +965,7 @@
       </div>
 
       <div class="scheme-panel" id="panel-ponpes">
-        <div class="scheme-head"><h3>🕌 Beasiswa Pondok Pesantren</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <div class="scheme-head"><h3> Beasiswa Pondok Pesantren</h3><span class="badge open">Dibuka tiap gelombang</span></div>
         <p class="scheme-desc">Untuk mahasiswa yang aktif mengajar atau mengasuh di pondok pesantren wilayah Bojonegoro, sebagai apresiasi atas kontribusi keagamaan sekaligus dukungan studi lanjut.</p>
         <div class="req-grid">
           <div class="req-col">
@@ -797,7 +989,7 @@
       </div>
 
       <div class="scheme-panel" id="panel-tugasakhir">
-        <div class="scheme-head"><h3>🎓 Beasiswa Tugas Akhir</h3><span class="badge open">Dibuka tiap gelombang</span></div>
+        <div class="scheme-head"><h3> Beasiswa Tugas Akhir</h3><span class="badge open">Dibuka tiap gelombang</span></div>
         <p class="scheme-desc">Bantuan satu kali bagi mahasiswa dari keluarga tidak mampu yang sedang menyelesaikan tugas akhir studi, agar proses kelulusan tidak terhambat kendala biaya.</p>
         <div class="req-grid">
           <div class="req-col">
@@ -819,7 +1011,7 @@
       </div>
 
       <div class="scheme-panel" id="panel-scientist">
-        <div class="scheme-head"><h3>🔬 Beasiswa Scientist</h3><span class="badge pending">Menunggu regulasi baru</span></div>
+        <div class="scheme-head"><h3> Beasiswa Scientist</h3><span class="badge pending">Menunggu regulasi baru</span></div>
         <p class="scheme-desc">Skema lanjutan bagi mahasiswa berprestasi di bidang akademik/riset. Pelaksanaan tahun 2026 masih menunggu penerbitan Peraturan Bupati (Perbup) terbaru sebagai dasar teknis, meski penyaluran tahap lanjutan sempat dicairkan pada Juli 2026 untuk penerima sebelumnya.</p>
         <div class="req-grid">
           <div class="req-col">
@@ -840,7 +1032,7 @@
       </div>
 
       <div class="scheme-panel" id="panel-desa">
-        <div class="scheme-head"><h3>🏘️ Beasiswa Sepuluh Sarjana per Desa</h3><span class="badge pending">Menunggu regulasi baru</span></div>
+        <div class="scheme-head"><h3> Beasiswa Sepuluh Sarjana per Desa</h3><span class="badge pending">Menunggu regulasi baru</span></div>
         <p class="scheme-desc">Program unggulan yang menargetkan setiap desa di Bojonegoro memiliki sepuluh sarjana. Untuk periode lanjutan, pelaksanaannya masih menunggu Peraturan Bupati terbaru sebagai dasar teknis pelaksanaan.</p>
         <div class="req-grid">
           <div class="req-col">
@@ -868,37 +1060,37 @@
 <section id="jadwal" class="section-alt">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">04 — Linimasa</span></div>
-    <h2 class="section-title"><span class="title-icon">🗓️</span>Jadwal &amp; alur pendaftaran</h2>
+    <h2 class="section-title"><span class="title-icon"></span>Jadwal &amp; alur pendaftaran</h2>
     <p class="section-intro">Pendaftaran tahun 2026 dilaksanakan dalam dua gelombang. Berikut status masing-masing gelombang per 2 November 2026.</p>
 
     <div class="timeline reveal">
       <div class="t-item closed">
         <div class="t-date">9 Maret – 10 April 2026</div>
-        <h4>✅ Gelombang I</h4>
+        <h4> Gelombang I</h4>
         <p>Periode pendaftaran pertama untuk skema Beasiswa Keluarga Miskin, Pondok Pesantren, dan Tugas Akhir.</p>
         <span class="t-status closed">Sudah ditutup</span>
       </div>
       <div class="t-item closed">
         <div class="t-date">1 – 31 Agustus 2026</div>
-        <h4>✅ Gelombang II</h4>
+        <h4> Gelombang II</h4>
         <p>Periode pendaftaran kedua untuk pengajuan baru Beasiswa Keluarga Miskin, Pondok Pesantren, dan Tugas Akhir. Berkas diserahkan ke Dinas Pendidikan pada hari kerja pukul 08.00 sampai 15.30 WIB.</p>
         <span class="t-status closed">Sudah ditutup</span>
       </div>
       <div class="t-item closed">
         <div class="t-date">5 – 21 Agustus 2026</div>
-        <h4>✅ Pengajuan penerima lanjutan (Tahap II)</h4>
+        <h4> Pengajuan penerima lanjutan (Tahap II)</h4>
         <p>Untuk penerima lanjutan Beasiswa Keluarga Miskin, Pondok Pesantren, Scientist, dan Sepuluh Sarjana per Desa.</p>
         <span class="t-status closed">Sudah ditutup</span>
       </div>
       <div class="t-item closed">
         <div class="t-date">30 September – 2 Oktober 2026</div>
-        <h4>✅ Pengumpulan berkas Beasiswa Baru 2A</h4>
+        <h4> Pengumpulan berkas Beasiswa Baru 2A</h4>
         <p>Calon penerima baru menyerahkan berkas fisik ke Dinas Pendidikan: sampul sesuai skema, surat permohonan, dan surat pernyataan bermaterai Rp10.000 (dicetak rangkap 2), beserta dokumen pendukung.</p>
         <span class="t-status closed">Sudah ditutup</span>
       </div>
       <div class="t-item">
         <div class="t-date">Menyusul</div>
-        <h4>🔔 Pembukaan pengajuan baru Beasiswa Scientist</h4>
+        <h4> Pembukaan pengajuan baru Beasiswa Scientist</h4>
         <p>Pengajuan baru Beasiswa Scientist masih menunggu penerbitan Peraturan Bupati terbaru. Jadwal akan diumumkan resmi oleh Dinas Pendidikan setelah regulasi terbit.</p>
         <span class="t-status upcoming">Dipantau</span>
       </div>
@@ -935,10 +1127,26 @@
 
 <hr class="divider">
 
+<section id="berkas">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="section-index">06b — Persiapan Berkas</span></div>
+    <h2 class="section-title"><span class="title-icon"></span>Siapkan berkasmu</h2>
+    <p class="section-intro">Centang berkas yang sudah siap, dan progresnya terhitung otomatis.</p>
+    <div class="berkas-box reveal">
+      <div class="berkas-top"><div class="berkas-msg" id="berkasMsg">Mulai dengan mencentang berkas</div><div class="berkas-count" id="berkasCount">0 / 9 siap</div></div>
+      <div class="berkas-bar"><div class="berkas-fill" id="berkasFill"></div></div>
+      <ul class="berkas-list" id="berkasList"><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Rekening Bank Jatim atas nama sendiri (wajib)</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Surat keterangan aktif kuliah</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Surat tidak menerima beasiswa lain</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>DTSEN dari Dinas Sosial</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Bukti UKT</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Cover, surat permohonan, dan surat pernyataan dicetak rangkap 2</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Materai Rp10.000 di surat pernyataan</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Nomor urut ditulis pakai spidol permanen di pojok kanan atas</span></label></li><li><label class="berkas-item"><input type="checkbox"><span class="box">✓</span><span>Materai Rp10.000 untuk kwitansi UKT (kalau UKT Rp5 juta atau lebih)</span></label></li></ul>
+      <p class="berkas-note">Berdasarkan pengumuman Beasiswa Baru 2A (pengumpulan 30 September sampai 2 Oktober 2026). Selalu cek pengumuman terbaru Dinas karena ketentuan bisa berbeda.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <section id="penyaluran">
   <div class="wrap">
     <div class="eyebrow-row"><span class="section-index">05 — Data Penyaluran</span></div>
-    <h2 class="section-title"><span class="title-icon">💰</span>Penyaluran dana tahap 1B</h2>
+    <h2 class="section-title"><span class="title-icon"></span>Penyaluran dana tahap 1B</h2>
     <p class="section-intro">Dicairkan pada Juli 2026 kepada 2.670 mahasiswa penerima lanjutan, dengan rincian sebagai berikut.</p>
 
     <div class="disburse-grid reveal">
@@ -950,7 +1158,7 @@
       <div class="disburse-cards" id="bars">
         <div class="disburse-card lead">
           <div class="dc-top">
-            <span class="dc-icon">🏘️</span>
+            <span class="dc-icon"></span>
             <span class="dc-share">82,7%</span>
           </div>
           <div class="dc-name">Sepuluh Sarjana/Desa</div>
@@ -959,7 +1167,7 @@
         </div>
         <div class="disburse-card">
           <div class="dc-top">
-            <span class="dc-icon">🔬</span>
+            <span class="dc-icon"></span>
             <span class="dc-share">12,5%</span>
           </div>
           <div class="dc-name">Scientist</div>
@@ -968,7 +1176,7 @@
         </div>
         <div class="disburse-card">
           <div class="dc-top">
-            <span class="dc-icon">🏠</span>
+            <span class="dc-icon"></span>
             <span class="dc-share">4,2%</span>
           </div>
           <div class="dc-name">Keluarga Miskin</div>
@@ -977,7 +1185,7 @@
         </div>
         <div class="disburse-card">
           <div class="dc-top">
-            <span class="dc-icon">🕌</span>
+            <span class="dc-icon"></span>
             <span class="dc-share">0,5%</span>
           </div>
           <div class="dc-name">Pondok Pesantren</div>
@@ -1062,15 +1270,15 @@
     </div>
     <div class="contact-strip">
       <div class="contact-item">
-        <span class="ci-icon">☎️</span>
+        <span class="ci-icon"></span>
         <div><div class="ci-label">Telepon</div><a href="tel:+62353881580">(0353) 881580</a></div>
       </div>
       <div class="contact-item">
-        <span class="ci-icon">✉️</span>
+        <span class="ci-icon"></span>
         <div><div class="ci-label">Email</div><a href="mailto:diknasbjn@gmail.com">diknasbjn@gmail.com</a></div>
       </div>
       <div class="contact-item">
-        <span class="ci-icon">📍</span>
+        <span class="ci-icon"></span>
         <div><div class="ci-label">Alamat</div><span class="ci-text">Jl. Patimura No. 9, Bojonegoro</span></div>
       </div>
     </div>
@@ -1088,7 +1296,7 @@
         <h5>Tautan resmi</h5>
         <a href="https://bojonegorokab.go.id" target="_blank" rel="noopener">bojonegorokab.go.id</a>
         <a href="https://dinaspendidikan.bojonegorokab.go.id" target="_blank" rel="noopener">dinaspendidikan.bojonegorokab.go.id</a>
-        <a href="tel:+62353881580">☎ (0353) 881580</a>
+        <a href="tel:+62353881580"> (0353) 881580</a>
       </div>
       <div>
         <h5>Navigasi</h5>
@@ -1327,7 +1535,7 @@
         {label:'IPS/IPK minimal 2,75', met: a.ipk === 'menengah' || a.ipk === 'tinggi'},
         {label:'Tidak menerima beasiswa lain', met: a.beasiswalain === 'tidak'},
       ];
-      schemes.push({key:'miskin', icon:'🏠', name:'Beasiswa Keluarga Miskin', crit});
+      schemes.push({key:'miskin', icon:'', name:'Beasiswa Keluarga Miskin', crit});
     }
 
     // Beasiswa Pondok Pesantren
@@ -1338,7 +1546,7 @@
         {label:'IPS minimal 3,00 (atau prestasi akademik provinsi)', met: a.ipk === 'tinggi', unknown: a.ipk === 'menengah'},
         {label:'Tidak menerima beasiswa lain', met: a.beasiswalain === 'tidak'},
       ];
-      schemes.push({key:'ponpes', icon:'🕌', name:'Beasiswa Pondok Pesantren', crit});
+      schemes.push({key:'ponpes', icon:'', name:'Beasiswa Pondok Pesantren', crit});
     }
 
     // Beasiswa Tugas Akhir
@@ -1349,7 +1557,7 @@
         {label:'IPK minimal 2,75', met: a.ipk === 'menengah' || a.ipk === 'tinggi'},
         {label:'Keluarga terdaftar DTSEN desil 1–5', met: a.dtks === 'ya', unknown: a.dtks === 'tidak_tahu'},
       ];
-      schemes.push({key:'tugasakhir', icon:'🎓', name:'Beasiswa Tugas Akhir', crit});
+      schemes.push({key:'tugasakhir', icon:'', name:'Beasiswa Tugas Akhir', crit});
     }
 
     // compute scores
@@ -1384,12 +1592,12 @@
       card.className = 'result-card';
       const cls = scoreBadgeClass(s.score);
       const checklist = s.crit.map(c=>{
-        const mark = c.met ? '✅' : (c.unknown ? '➖' : '❌');
-        return '<li><span class="mark">'+mark+'</span><span>'+c.label+'</span></li>';
+        const mark = c.met ? '✓' : (c.unknown ? '–' : '✕');
+        return '<li class="'+(c.met?'ok':(c.unknown?'unk':'no'))+'"><span class="mark">'+mark+'</span><span>'+c.label+'</span></li>';
       }).join('');
       card.innerHTML =
         '<div class="result-card-head">'+
-          '<div class="result-card-title"><span>'+s.icon+'</span><span>'+s.name+'</span></div>'+
+          '<div class="result-card-title"><span>'+s.name+'</span></div>'+
           '<span class="result-score '+cls+'">'+s.score+'% cocok</span>'+
         '</div>'+
         '<ul class="result-checklist">'+checklist+'</ul>';
@@ -1397,7 +1605,7 @@
     });
 
     const note = document.getElementById('resultNote');
-    let noteText = '📌 Beasiswa Scientist dan Sepuluh Sarjana per Desa belum bisa dinilai kecocokannya karena masih menunggu Peraturan Bupati terbaru.';
+    let noteText = ' Beasiswa Scientist dan Sepuluh Sarjana per Desa belum bisa dinilai kecocokannya karena masih menunggu Peraturan Bupati terbaru.';
     if(quizAnswers.ipk === 'tinggi'){
       noteText += ' IPK kamu tergolong tinggi — layak dipantau kalau skema Scientist dibuka lagi.';
     }
@@ -1405,6 +1613,7 @@
 
     resultEl.classList.add('show');
     checkerBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+    if(schemes[0] && schemes[0].score>=75 && window.fireConfetti) window.fireConfetti();
   }
 
   document.getElementById('checkReset').addEventListener('click', ()=>{
@@ -1446,5 +1655,62 @@
   });
 </script>
 
+<script>
+  // konfeti
+  window.fireConfetti = function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cv = document.createElement('canvas'); cv.className = 'confetti';
+    cv.width = window.innerWidth; cv.height = window.innerHeight; document.body.appendChild(cv);
+    const ctx = cv.getContext('2d');
+    const colors = ['#1E5AA8','#8FD3F0','#7A5AF0','#119E94','#E9A21B','#EF6B4A'];
+    const parts = Array.from({length:90}, ()=>({
+      x: cv.width/2 + (Math.random()-0.5)*160, y: cv.height*0.55,
+      vx: (Math.random()-0.5)*16, vy: -Math.random()*16-6,
+      s: Math.random()*8+5, r: Math.random()*6, vr: (Math.random()-0.5)*0.4,
+      c: colors[Math.floor(Math.random()*colors.length)]
+    }));
+    const t0 = performance.now();
+    (function frame(now){
+      const t = now - t0; ctx.clearRect(0,0,cv.width,cv.height);
+      parts.forEach(p=>{
+        p.vy += 0.38; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+        ctx.globalAlpha = Math.max(0, 1 - t/2600); ctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); ctx.restore();
+      });
+      if(t < 2600) requestAnimationFrame(frame); else cv.remove();
+    })(t0);
+  };
+
+  // ceklis berkas
+  (function(){
+    const items = document.querySelectorAll('#berkasList .berkas-item');
+    const fill = document.getElementById('berkasFill');
+    const count = document.getElementById('berkasCount');
+    const msg = document.getElementById('berkasMsg');
+    if(!items.length) return;
+    let celebrated = false;
+    function update(){
+      const total = items.length;
+      let done = 0;
+      items.forEach(it=>{
+        const on = it.querySelector('input').checked;
+        it.classList.toggle('done', on);
+        if(on) done++;
+      });
+      fill.style.width = (done/total*100) + '%';
+      count.textContent = done + ' / ' + total + ' siap';
+      if(done === 0) msg.textContent = 'Mulai dengan mencentang berkas';
+      else if(done < total/2) msg.textContent = 'Terus lanjutkan';
+      else if(done < total) msg.textContent = 'Hampir lengkap';
+      else {
+        msg.textContent = 'Semua berkas sudah siap';
+        if(!celebrated){ celebrated = true; window.fireConfetti(); }
+      }
+      if(done < total) celebrated = false;
+    }
+    items.forEach(it=> it.querySelector('input').addEventListener('change', update));
+    update();
+  })();
+</script>
 </body>
 </html>
